@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import React, { ReactElement } from 'react';
+import React, { FC, ReactElement } from 'react';
 
-export const Blog = (): ReactElement => {
+export const Blog: FC = (): ReactElement => {
   return (
     <section>
       <div className="container">
