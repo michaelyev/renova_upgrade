@@ -1,4 +1,6 @@
-export const navTabsContent = {
+import { INavTabsConfig } from '@/interfaces/navTabs';
+
+export const navTabsConfig: INavTabsConfig = {
   products: [
     {
       id: 'discounts',

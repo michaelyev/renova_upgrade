@@ -1,4 +1,3 @@
-'use client';
 import Image from 'next/image';
 import React, { FC, ReactElement } from 'react';
 import Link from 'next/link';
@@ -9,7 +8,7 @@ import { socialIcons } from '@/constants/footer';
 
 export const Footer /* : FC */ = (): ReactElement => {
   return (
-    <footer className="pt-[112px] pb-[24px] bg-custom-gray">
+    <footer className="pt-[112px] pb-[24px] bg-customGray">
       <div className="container px-5  text-main1">
         <div className="flex justify-between items-center">
           <div className="flex flex-col gap-[24px] w-1/3">

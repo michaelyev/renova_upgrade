@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef, useState } from 'react';
+import React, { FC, useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -8,12 +8,9 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 
-// import "./styles.css";
-
-// import required modules
 import { FreeMode, Pagination } from 'swiper';
 
-export function Reviews({ card }) {
+export const Reviews: FC ({ card }) {
   return (
     <>
       <Swiper

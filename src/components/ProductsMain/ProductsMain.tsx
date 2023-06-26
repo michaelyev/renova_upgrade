@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
+import Button from '../common/button/Button';
 
-const Products = () => {
+export const Products = () => {
   return (
     <section className="mt-[128px]">
       <div className="container ">
@@ -17,16 +18,7 @@ const Products = () => {
               adipisicing elit. A?
             </p>
 
-            <button className="items-center flex border-2 border-additional1 border-solid py-[8px] px-[24px] ml-auto">
-              Browse catalog
-              <Image
-                alt=""
-                className="pl-[8px] flex-row-reverse"
-                src="/images/icons/right_arrow.svg"
-                width={24}
-                height={24}
-              />
-            </button>
+            <Button type="browse" imageName="right_arrow" />
           </div>
           <div className=" w-1/2 mt-[40px] ml-[20px]">
             <Image src="/images/products_countertops.jpg" width={650} height={296} alt="count" />
@@ -46,10 +38,7 @@ const Products = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
               adipisicing elit. A?
             </p>
-            <button className="items-center flex border-2 border-additional1 border-solid py-[8px] px-[24px] mr-auto">
-              Browse catalog
-              <Image className="pl-[8px]" src="/images/icons/right_arrow.svg" width={24} height={24} alt="dsfvs" />
-            </button>
+            <Button type="browse" imageName="right_arrow" />
           </div>
         </div>
 
@@ -63,10 +52,7 @@ const Products = () => {
               adipisicing elit. A?
             </p>
 
-            <button className="items-center flex border-2 border-additional1 border-solid py-[8px] px-[24px] ml-auto">
-              Browse catalog
-              <Image className="pl-[8px]" src="/images/icons/right_arrow.svg" width={24} height={24} alt="sds" />
-            </button>
+            <Button type="browse" imageName="right_arrow" />
           </div>
           <div className=" w-1/2 mt-[40px] ml-[20px]">
             <Image src="/images/products_countertops.jpg" width={650} height={296} alt="count" />

@@ -1,9 +1,9 @@
-import React, { FC, ReactElement } from 'react'
+import React, { FC, ReactElement } from 'react';
 
 import { inputConfig } from '../common/input/inputconfig';
 import Input from '../common/input/Input';
 
-export const ContactForm:FC = ():ReactElement => {
+export const ContactForm: FC = (): ReactElement => {
   return (
     <section
       className="max-w-[874px] max-h-[518px] mt-[128px]
@@ -26,12 +26,9 @@ export const ContactForm:FC = ():ReactElement => {
       </div>
       <div className="mb-[40px]">
         <h3 className="mb-[8px] text-accent underline">Attachment</h3>
-        <p className='text-additional2'>Share a photo or file to enhance our assistance to you!</p>
+        <p className="text-additional2">Share a photo or file to enhance our assistance to you!</p>
       </div>
-      <button className=" mx-auto border-accent border-2 w-[242px] h-[72px] ">
-        Consultation
-      </button>
+      <button className=" mx-auto border-accent border-2 w-[242px] h-[72px] ">Consultation</button>
     </section>
   );
-}
-
+};

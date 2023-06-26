@@ -1,9 +1,9 @@
 import React, { FC, ReactElement } from 'react';
-import { quoteForm  } from '@/mockData/mainPageContacts';
+import { quoteForm } from '@/mockData/mainPageContacts';
 import Input from '../common/input/Input';
 import { contactInfo } from '@/mockData/ourContacts';
 
-export const ContactsMain:FC = (): ReactElement => {
+export const ContactsMain: FC = (): ReactElement => {
   return (
     <section>
       <div className="container my-[128px]">
@@ -20,13 +20,12 @@ export const ContactsMain:FC = (): ReactElement => {
             <h3 className="font-inter font-bold text-xl leading-[1.2104] pb-[40px]">{quoteForm.title}</h3>
             <p className="mb-[24px]">{quoteForm.description}</p>
             {quoteForm.fields.map((field, index) => (
-              <Input
-                key={index}
-                id='contactForm'
-                type="text"
-                placeholder={field.placeholder}
-              />
+              <Input key={index} id="contactForm" type="text" placeholder={field.placeholder} />
             ))}
+            <div className="my-[40px] text-center mx-auto">
+              <h3 className="mb-[8px] text-accent underline">Attachment</h3>
+              <p className="text-additional2">Upload file or photo</p>
+            </div>
             <button className="border-accent border-2 w-[242px] h-[72px]">{quoteForm.buttonText}</button>
           </div>
           <div>

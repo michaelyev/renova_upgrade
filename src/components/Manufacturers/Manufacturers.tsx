@@ -3,10 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { NavTabsState } from '../common/navtabs/NavTabs';
-import { navTabsContent } from '../common/navtabs/navtabsconfig';
 import { brandLogos } from '@/constants/manufacturers';
 
-const Manufacturers = () => {
+export const Manufacturers = () => {
   const [activeTrade, setActiveTrade] = useState('countertops');
 
   return (
@@ -33,5 +32,3 @@ const Manufacturers = () => {
     </section>
   );
 };
-
-export default Manufacturers;

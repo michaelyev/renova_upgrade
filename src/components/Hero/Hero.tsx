@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { FC, ReactElement } from 'react';
 
-const Hero: FC = (): ReactElement => {
+export const Hero: FC = (): ReactElement => {
   return (
     <section className="bg-heroImage bg-cover pt-[50px] h-screen">
       <div className="container  ">
@@ -16,10 +16,8 @@ const Hero: FC = (): ReactElement => {
         <p className="font-inter font-normal text-lg leading-tight mb-[45px] max-w-[652px]">
           Your imagination, our embodiment. Send us a photo of the room and your wishes, and we will advise you!
         </p>
-        button className="mb-[203px] border-2 px-[48px] py-[24px]  border-accent ">Consultation</button>
+        <button className="mb-[203px] border-2 px-[48px] py-[24px]  border-accent ">Consultation</button>
       </div>
     </section>
   );
 };
-
-export default Hero;
