@@ -1,13 +1,12 @@
 import { IInputType } from '@/interfaces/inputConfig';
-import { button } from '@material-tailwind/react';
 import DoneIcon from '@mui/icons-material/Done';
 
 export const inputConfig: IInputType = {
   footer: {
     type: 'tel',
     styles: 'pl-[33px] py-[14px] pr-[47px] placeholder-additional2 bg-main1 text-additional2',
-    button: (
-      <button className="absolute p-[11.3px] right-[0px] bg-accent ">
+    button: () => (
+      <button className="absolute p-[11.3px] right-[0px] bg-accent">
         <DoneIcon />
       </button>
     ),

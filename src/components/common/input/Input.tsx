@@ -1,7 +1,7 @@
 'use client';
 import React, { FC } from 'react';
 import DoneIcon from '@mui/icons-material/Done';
-import { inputConfig } from './inputconfig';
+import { inputConfig } from '@/constants/inputConfig';
 
 interface IInput {
   id: string;
