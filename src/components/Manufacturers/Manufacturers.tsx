@@ -8,6 +8,7 @@ import { brandLogos } from '@/constants/manufacturers';
 export const Manufacturers = () => {
   const [activeTrade, setActiveTrade] = useState('countertops');
 
+  console.log(activeTrade)
   return (
     <section>
       <div className="container">

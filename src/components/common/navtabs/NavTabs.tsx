@@ -3,6 +3,8 @@
 import { navTabsConfig } from '@/constants/navTabsConfig';
 import React, { ReactElement, useState } from 'react';
 
+
+
 interface NavTabsStateProps {
   tabName: string;
   style?: string;
@@ -10,12 +12,13 @@ interface NavTabsStateProps {
   onTabChange: (tabId: string) => void;
 }
 
-export const NavTabsState: React.FC<NavTabsStateProps> = ({ tabName, style, border }): ReactElement => {
+export const NavTabsState: React.FC<NavTabsStateProps> = ({ tabName, style, border, onTabChange }): ReactElement => {
   const tabs = navTabsConfig[tabName];
   const [activeTab, setActiveTab] = useState('countertops');
 
   const handleClick = (tabId) => {
     setActiveTab(tabId);
+    onTabChange(tabId)
   };
 
   return (
@@ -24,7 +27,7 @@ export const NavTabsState: React.FC<NavTabsStateProps> = ({ tabName, style, bord
         return (
           <div
             key={tab.id}
-            onClick={() => handleClick(tab.id)}
+            onClick={(): void => handleClick(tab.id)}
             className={`${style ? style : 'py-[16px] px-[24px]'}  ${
               activeTab === tab.id ? 'bg-additional2 text-main1' : 'bg-main1 text-additional2'
             } `}
