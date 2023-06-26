@@ -1,22 +1,25 @@
 'use client';
 
 import { navTabsConfig } from '@/constants/navTabsConfig';
+import { BrandLogosType } from '@/interfaces/brandLogosType';
+import { BrandLogos } from '@/interfaces/manufacturers';
+import { INavTabsConfig } from '@/interfaces/navTabs';
 import React, { ReactElement, useState } from 'react';
 
 
 
 interface NavTabsStateProps {
-  tabName: string;
+  tabName: keyof INavTabsConfig;
   style?: string;
   border?: string;
-  onTabChange: (tabId: string) => void;
+  onTabChange: (tabId: BrandLogosType) => void;
 }
 
 export const NavTabsState: React.FC<NavTabsStateProps> = ({ tabName, style, border, onTabChange }): ReactElement => {
   const tabs = navTabsConfig[tabName];
-  const [activeTab, setActiveTab] = useState('countertops');
+  const [activeTab, setActiveTab] = useState<BrandLogosType>('countertops');
 
-  const handleClick = (tabId) => {
+  const handleClick = (tabId: BrandLogosType) => {
     setActiveTab(tabId);
     onTabChange(tabId)
   };
@@ -27,7 +30,7 @@ export const NavTabsState: React.FC<NavTabsStateProps> = ({ tabName, style, bord
         return (
           <div
             key={tab.id}
-            onClick={(): void => handleClick(tab.id)}
+            onClick={(): void => handleClick(tab.id as BrandLogosType)}
             className={`${style ? style : 'py-[16px] px-[24px]'}  ${
               activeTab === tab.id ? 'bg-additional2 text-main1' : 'bg-main1 text-additional2'
             } `}

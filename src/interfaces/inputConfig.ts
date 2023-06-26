@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 interface IInputProps {
   type?: string;
   styles: string;
-  button?: () => ReactNode;
+  button?: ReactNode;
 }
 
 export interface IInputType {

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC, ReactElement } from 'react';
 
-const CheckIcon = () => {
-  return (
+const CheckIcon: FC = (): ReactElement => 
+   (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className="h-3.5 w-3.5"
@@ -17,6 +17,6 @@ const CheckIcon = () => {
       ></path>
     </svg>
   );
-};
+
 
 export default CheckIcon;

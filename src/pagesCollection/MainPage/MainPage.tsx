@@ -7,8 +7,9 @@ import { Manufacturers } from '@/components/Manufacturers/Manufacturers';
 import { Portfolio } from '@/components/Portfolio/Portfolio';
 import { Products } from '@/components/ProductsMain/ProductsMain';
 import { Ratings } from '@/components/Ratings/Ratings';
-// import { Reviews } from '@/components/Reviews/Reviews';
+import { Reviews } from '@/components/Reviews/Reviews';
 import { Video } from '@/components/VideoMain/VideoMain';
+import { ProductsCard } from '@/components/common/cards/products/products';
 
 export const MainPage = () => {
   return (
@@ -19,8 +20,8 @@ export const MainPage = () => {
       <Video />
       <Manufacturers />
       <Portfolio />
-      {/* <Reviews /> */}
-      <Ratings />
+      <Reviews card={<ProductsCard/>}/>
+      <Ratings  />
       <Blog />
       <Faq />
       <ContactsMain />

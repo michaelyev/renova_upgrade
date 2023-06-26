@@ -1,14 +1,16 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { FC, ReactElement, useState } from 'react';
 import { NavTabsState } from '../common/navtabs/NavTabs';
 import { brandLogos } from '@/constants/manufacturers';
+import { BrandLogos } from '@/interfaces/manufacturers';
+import { BrandLogosType } from '@/interfaces/brandLogosType';
 
-export const Manufacturers = () => {
-  const [activeTrade, setActiveTrade] = useState('countertops');
 
-  console.log(activeTrade)
+export const Manufacturers: FC = ():ReactElement => {
+  const [activeTrade, setActiveTrade] = useState<BrandLogosType>('countertops');
+
   return (
     <section>
       <div className="container">

@@ -1,5 +1,5 @@
-/* 'use client';
-import React, { FC, ReactElement, useRef, useState } from 'react';
+'use client';
+import React, { FC, JSXElementConstructor, ReactElement, ReactNode, useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -10,7 +10,11 @@ import 'swiper/css/pagination';
 
 import { FreeMode, Pagination } from 'swiper';
 
-export const Reviews: FC ({ card }):ReactElement => {
+type CardType = {
+  card: ReactElement
+}
+
+export const Reviews:FC<CardType> = ({ card }):ReactElement => {
   return (
     <>
       <Swiper
@@ -31,4 +35,3 @@ export const Reviews: FC ({ card }):ReactElement => {
     </>
   );
 }
- */

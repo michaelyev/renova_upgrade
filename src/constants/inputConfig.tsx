@@ -5,7 +5,7 @@ export const inputConfig: IInputType = {
   footer: {
     type: 'tel',
     styles: 'pl-[33px] py-[14px] pr-[47px] placeholder-additional2 bg-main1 text-additional2',
-    button: () => (
+    button: (
       <button className="absolute p-[11.3px] right-[0px] bg-accent">
         <DoneIcon />
       </button>
@@ -18,7 +18,7 @@ export const inputConfig: IInputType = {
   productSearch: {
     type: 'text',
     styles: 'w-full px-[48px] py-[20px]  placeholder-additional2 text-additional2 bg-main1',
-    button: () => (
+    button: (
       <button className="absolute right-0 top-1/2 transform -translate-y-1/2 pr-[48px]">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
