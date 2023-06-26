@@ -10,7 +10,7 @@ interface IInput {
   type?: string;
 }
 
-const Input: FC<IInput> = ({ id, placeholder, label, type }) => {
+export const Input: FC<IInput> = ({ id, placeholder, label, type }) => {
   const input = inputConfig[id];
   return (
     <label className="relative">
@@ -20,5 +20,3 @@ const Input: FC<IInput> = ({ id, placeholder, label, type }) => {
     </label>
   );
 };
-
-export default Input;

@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import React from 'react';
-import Button from '../common/button/Button';
+import { Button } from '../common';
+import { FC, ReactElement } from 'react';
 
-export const Products = () => {
+export const Products: FC = (): ReactElement => {
   return (
     <section className="mt-[128px]">
       <div className="container ">
@@ -62,5 +62,3 @@ export const Products = () => {
     </section>
   );
 };
-
-export default Products;

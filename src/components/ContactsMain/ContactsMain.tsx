@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react';
 import { quoteForm } from '@/mockData/mainPageContacts';
-import Input from '../common/input/Input';
 import { contactInfo } from '@/mockData/ourContacts';
+import { Input } from '../common';
 
 export const ContactsMain: FC = (): ReactElement => {
   return (

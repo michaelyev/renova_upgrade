@@ -1,7 +1,7 @@
 'use client';
 
 import { navTabsConfig } from '@/constants/navTabsConfig';
-import React, { useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 
 interface NavTabsStateProps {
   tabName: string;
@@ -10,7 +10,7 @@ interface NavTabsStateProps {
   onTabChange: (tabId: string) => void;
 }
 
-export const NavTabsState: React.FC<NavTabsStateProps> = ({ tabName, style, border }) => {
+export const NavTabsState: React.FC<NavTabsStateProps> = ({ tabName, style, border }): ReactElement => {
   const tabs = navTabsConfig[tabName];
   const [activeTab, setActiveTab] = useState('countertops');
 

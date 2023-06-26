@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+'use client';
+import React, { FC, ReactElement, useState } from 'react';
 import CheckIcon from './CheckIcon';
 
-const StyledCheckbox = () => {
+export const StyledCheckbox: FC = (): ReactElement => {
   const [isChecked, setIsChecked] = useState(true);
 
   const handleCheckboxChange = () => {
@@ -24,5 +25,3 @@ const StyledCheckbox = () => {
     </div>
   );
 };
-
-export default StyledCheckbox;

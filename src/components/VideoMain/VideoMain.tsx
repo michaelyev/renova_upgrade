@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { FC, ReactElement } from 'react';
 
-const Video = () => {
+export const Video: FC = (): ReactElement => {
   return (
     <section className="mt-[128px]  ">
       <div className="container">
@@ -26,5 +26,3 @@ const Video = () => {
     </section>
   );
 };
-
-export default Video;

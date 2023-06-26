@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react';
 
 import { inputConfig } from '../common/input/inputconfig';
-import Input from '../common/input/Input';
+import { Input } from '../common';
 
 export const ContactForm: FC = (): ReactElement => {
   return (

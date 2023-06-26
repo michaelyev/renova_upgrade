@@ -10,7 +10,7 @@ interface IButtonType {
   imageName?: string;
 }
 
-const Button: FC<IButtonType> = ({ type, imageName }): ReactElement => {
+export const Button: FC<IButtonType> = ({ type, imageName }): ReactElement => {
   const btn = buttonConfig[type];
   return (
     <button className={btn.style}>
@@ -21,5 +21,3 @@ const Button: FC<IButtonType> = ({ type, imageName }): ReactElement => {
     </button>
   );
 };
-
-export default Button;

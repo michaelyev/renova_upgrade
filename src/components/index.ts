@@ -1,0 +1,16 @@
+export * from './Blog';
+export * from './ContactForm';
+export * from './ContactsMain';
+export * from './Discounts';
+export * from './FAQ';
+export * from './Footer';
+export * from './Header';
+export * from './Hero';
+export * from './Manufacturers';
+export * from './Portfolio';
+export * from './ProductSearch';
+export * from './ProductsMain';
+export * from './Ratings';
+// export * from './Reviews';
+export * from './VideoMain';
+export * from './common';

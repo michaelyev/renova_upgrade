@@ -1,5 +1,5 @@
-'use client';
-import React, { FC, useRef, useState } from 'react';
+/* 'use client';
+import React, { FC, ReactElement, useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -10,16 +10,14 @@ import 'swiper/css/pagination';
 
 import { FreeMode, Pagination } from 'swiper';
 
-export const Reviews: FC ({ card }) {
+export const Reviews: FC ({ card }):ReactElement => {
   return (
     <>
       <Swiper
         slidesPerView={3}
         spaceBetween={30}
         freeMode={true}
-        /* pagination={{
-          clickable: true,
-        }} */
+        
         modules={[FreeMode, Pagination]}
         className="mySwiper"
       >
@@ -33,3 +31,4 @@ export const Reviews: FC ({ card }) {
     </>
   );
 }
+ */

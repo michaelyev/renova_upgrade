@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Carousel from './Carousel';
 import { FC, ReactElement } from 'react';
-import Button from '../common/button/Button';
+import { Button } from '../common';
 
 export const Discounts: FC = (): ReactElement => {
   return (
