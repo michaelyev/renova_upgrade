@@ -1,0 +1,184 @@
+{
+    "countertops": [
+        {
+            "id": 1,
+            "manufacturer": {
+                "title": "Manufacturer",
+                "company": "MSI"
+            },
+            "color": {
+                "name": "Color",
+                "title": "ALABASTER WHITE"
+            },
+            "purpose": {
+                "title": "Purpose",
+                "text": "Wall, Countertop"
+            },
+            "surface": {
+                "title": "Style",
+                "style": "Marble - Subtle Veins"
+            },
+            "material": {
+                "title": "Material",
+                "material": "Quartz"
+            },
+            "imageUrl": "/images/products/alebaster-white-quartz.jpg",
+            "price": {
+                "title": "Price",
+                "price": "$20.99/sqft"
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isChecked": false
+        },
+        {
+            "id": 2,
+            "manufacturer": {
+                "title": "Manufacturer",
+                "company": "Samsung"
+            },
+            "color": {
+                "name": "Color",
+                "title": "ONYX BLACK"
+            },
+            "purpose": {
+                "title": "Purpose",
+                "text": "Floor, Wall"
+            },
+            "surface": {
+                "title": "Style",
+                "style": "Granite - Bold Pattern"
+            },
+            "material": {
+                "title": "Material",
+                "material": "Quartz"
+            },
+            "imageUrl": "/images/products/arctic-white-quartz.jpg",
+            "price": {
+                "title": "Price",
+                "price": "$25.99/sqft"
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isChecked": false
+        },
+        {
+            "id": 3,
+            "manufacturer": {
+                "title": "Manufacturer",
+                "company": "LG"
+            },
+            "color": {
+                "name": "Color",
+                "title": "CRYSTAL BLUE"
+            },
+            "purpose": {
+                "title": "Purpose",
+                "text": "Countertop"
+            },
+            "surface": {
+                "title": "Style",
+                "style": "Limestone - Subtle Pattern"
+            },
+            "material": {
+                "title": "Material",
+                "material": "Quartz"
+            },
+            "imageUrl": "/images/products/ash-gray-quartz.jpg",
+            "price": {
+                "title": "Price",
+                "price": "$22.99/sqft"
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isChecked": false
+        },
+        {
+            "id": 4,
+            "manufacturer": {
+                "title": "Manufacturer",
+                "company": "Siemens"
+            },
+            "color": {
+                "name": "Color",
+                "title": "SILVER GRAY"
+            },
+            "purpose": {
+                "title": "Purpose",
+                "text": "Wall"
+            },
+            "surface": {
+                "title": "Style",
+                "style": "Slate - Rough Texture"
+            },
+            "material": {
+                "title": "Material",
+                "material": "Quartz"
+            },
+            "imageUrl": "/images/products/babylon-gray-quartz.jpg",
+            "price": {
+                "title": "Price",
+                "price": "$18.99/sqft"
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isChecked": false
+        },
+        {
+            "id": 5,
+            "manufacturer": {
+                "title": "Manufacturer",
+                "company": "Whirlpool"
+            },
+            "color": {
+                "name": "Color",
+                "title": "IVORY CREAM"
+            },
+            "purpose": {
+                "title": "Purpose",
+                "text": "Countertop"
+            },
+            "surface": {
+                "title": "Style",
+                "style": "Travertine - Smooth Texture"
+            },
+            "material": {
+                "title": "Material",
+                "material": "Quartz"
+            },
+            "imageUrl": "/images/products/babylon-gray-concrete-quartz.jpg",
+            "price": {
+                "title": "Price",
+                "price": "$21.99/sqft"
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isChecked": false
+        },
+        {
+            "id": 6,
+            "manufacturer": {
+                "title": "Manufacturer",
+                "company": "Electrolux"
+            },
+            "color": {
+                "name": "Color",
+                "title": "SAND BEIGE"
+            },
+            "purpose": {
+                "title": "Purpose",
+                "text": "Floor, Countertop"
+            },
+            "surface": {
+                "title": "Style",
+                "style": "Soapstone - Subtle Pattern"
+            },
+            "material": {
+                "title": "Material",
+                "material": "Quartz"
+            },
+            "imageUrl": "/images/products/bayshore-sand-quartz.jpg",
+            "price": {
+                "title": "Price",
+                "price": "$24.99/sqft"
+            },
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "isChecked": false
+        }
+    ]
+}

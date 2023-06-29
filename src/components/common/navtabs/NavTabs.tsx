@@ -42,3 +42,9 @@ export const NavTabsState: React.FC<NavTabsStateProps> = ({ tabName, style, bord
     </div>
   );
 };
+
+
+
+
+
+

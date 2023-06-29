@@ -1,0 +1,108 @@
+{
+    "tile": [
+        {
+            "id": 1,
+            "manufacturer": {
+                "title": "Manufacturer",
+                "company": "Daltile"
+            },
+            "color": {
+                "name": "Color",
+                "title": "White"
+            },
+            "style": {
+                "title": "Style",
+                "style": "Subway Tile"
+            },
+            "material": {
+                "title": "Material",
+                "material": "Ceramic"
+            },
+            "imageUrl": "/images/tiles/daltile_white.jpg",
+            "price": {
+                "title": "Price",
+                "price": "$2.5/sqft"
+            },
+            "description": "Classic white subway tile by Daltile.",
+            "isChecked": false
+        },
+        {
+            "id": 2,
+            "manufacturer": {
+                "title": "Manufacturer",
+                "company": "American Olean"
+            },
+            "color": {
+                "name": "Color",
+                "title": "Black"
+            },
+            "style": {
+                "title": "Style",
+                "style": "Mosaic Tile"
+            },
+            "material": {
+                "title": "Material",
+                "material": "Porcelain"
+            },
+            "imageUrl": "/images/tiles/americanolean_black.jpg",
+            "price": {
+                "title": "Price",
+                "price": "$3.5/sqft"
+            },
+            "description": "Elegant black mosaic tile by American Olean.",
+            "isChecked": false
+        },
+        {
+            "id": 3,
+            "manufacturer": {
+                "title": "Manufacturer",
+                "company": "Emser"
+            },
+            "color": {
+                "name": "Color",
+                "title": "Beige"
+            },
+            "style": {
+                "title": "Style",
+                "style": "Travertine Tile"
+            },
+            "material": {
+                "title": "Material",
+                "material": "Natural Stone"
+            },
+            "imageUrl": "/images/tiles/emser_beige.jpg",
+            "price": {
+                "title": "Price",
+                "price": "$5.0/sqft"
+            },
+            "description": "Natural stone travertine tile by Emser.",
+            "isChecked": false
+        },
+        {
+            "id": 4,
+            "manufacturer": {
+                "title": "Manufacturer",
+                "company": "Marazzi"
+            },
+            "color": {
+                "name": "Color",
+                "title": "Gray"
+            },
+            "style": {
+                "title": "Style",
+                "style": "Wood Look Tile"
+            },
+            "material": {
+                "title": "Material",
+                "material": "Porcelain"
+            },
+            "imageUrl": "/images/tiles/marazzi_gray.jpg",
+            "price": {
+                "title": "Price",
+                "price": "$4.0/sqft"
+            },
+            "description": "Wood look porcelain tile by Marazzi.",
+            "isChecked": false
+        }
+    ]
+}

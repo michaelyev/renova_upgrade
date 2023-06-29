@@ -1,0 +1,108 @@
+{
+    "cabinets": [
+        {
+            "id": 1,
+            "manufacturer": {
+                "title": "Manufacturer",
+                "company": "IKEA"
+            },
+            "color": {
+                "name": "Color",
+                "title": "White"
+            },
+            "style": {
+                "title": "Style",
+                "style": "Modern"
+            },
+            "material": {
+                "title": "Material",
+                "material": "Laminated particleboard"
+            },
+            "imageUrl": "/images/cabinets/ikea_white.jpg",
+            "price": {
+                "title": "Price",
+                "price": "$199/unit"
+            },
+            "description": "IKEA's signature white, modern kitchen cabinet.",
+            "isChecked": false
+        },
+        {
+            "id": 2,
+            "manufacturer": {
+                "title": "Manufacturer",
+                "company": "Home Depot"
+            },
+            "color": {
+                "name": "Color",
+                "title": "Cherry"
+            },
+            "style": {
+                "title": "Style",
+                "style": "Traditional"
+            },
+            "material": {
+                "title": "Material",
+                "material": "Solid wood"
+            },
+            "imageUrl": "/images/cabinets/homedepot_cherry.jpg",
+            "price": {
+                "title": "Price",
+                "price": "$349/unit"
+            },
+            "description": "A traditional solid wood cabinet with a cherry finish.",
+            "isChecked": false
+        },
+        {
+            "id": 3,
+            "manufacturer": {
+                "title": "Manufacturer",
+                "company": "Lowes"
+            },
+            "color": {
+                "name": "Color",
+                "title": "Gray"
+            },
+            "style": {
+                "title": "Style",
+                "style": "Shaker"
+            },
+            "material": {
+                "title": "Material",
+                "material": "Painted wood"
+            },
+            "imageUrl": "/images/cabinets/lowes_gray.jpg",
+            "price": {
+                "title": "Price",
+                "price": "$249/unit"
+            },
+            "description": "Shaker style cabinet in a modern gray color.",
+            "isChecked": false
+        },
+        {
+            "id": 4,
+            "manufacturer": {
+                "title": "Manufacturer",
+                "company": "KraftMaid"
+            },
+            "color": {
+                "name": "Color",
+                "title": "Maple"
+            },
+            "style": {
+                "title": "Style",
+                "style": "Rustic"
+            },
+            "material": {
+                "title": "Material",
+                "material": "Maple wood"
+            },
+            "imageUrl": "/images/cabinets/kraftmaid_maple.jpg",
+            "price": {
+                "title": "Price",
+                "price": "$399/unit"
+            },
+            "description": "Rustic maple wood cabinet by KraftMaid.",
+            "isChecked": false
+        }
+    ]
+}

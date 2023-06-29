@@ -1,3 +1,4 @@
+'use client'
 import { FC } from "react";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { Input } from "../common";
