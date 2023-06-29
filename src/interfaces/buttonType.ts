@@ -1,5 +1,7 @@
 export interface IButtonType {
   browse: IButtonTypeData;
+  browseRight: IButtonTypeData;
+  browseLeft: IButtonTypeData;
   feedback: IButtonTypeData;
 }
 

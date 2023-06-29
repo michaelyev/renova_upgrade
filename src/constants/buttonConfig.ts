@@ -6,6 +6,16 @@ export const buttonConfig: any = {
     icon: true,
     style: 'items-center flex border-2 border-additional1 border-solid py-[8px] px-[24px]',
   },
+  browseRight: {
+    text: 'Browse catalog',
+    icon: true,
+    style: 'items-center flex border-2 border-additional1 border-solid py-[8px] px-[24px] ml-auto',
+  },
+  browseLeft: {
+    text: 'Browse catalog',
+    icon: true,
+    style: 'items-center flex border-2 border-additional1 border-solid py-[8px] px-[24px] mr-auto',
+  },
 
   feedback: {
     text: 'Leave feedback',

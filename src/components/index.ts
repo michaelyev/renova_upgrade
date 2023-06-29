@@ -8,7 +8,6 @@ export * from './Header';
 export * from './Hero';
 export * from './Manufacturers';
 export * from './Portfolio';
-export * from './ProductSearch';
 export * from './ProductsMain';
 export * from './Ratings';
 // export * from './Reviews';

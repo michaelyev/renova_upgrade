@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { buttonConfig } from '@/constants/buttonConfig';
 import { IButtonTypeData } from '@/interfaces/buttonType';
 
-type buttonType = 'feedback' | 'request' | 'browse';
+type buttonType = 'feedback' | 'request' | 'browseRight' | 'browseLeft' | 'browse'
 
 interface IButtonType {
   type: buttonType;
@@ -12,6 +12,7 @@ interface IButtonType {
 
 export const Button: FC<IButtonType> = ({ type, imageName }): ReactElement => {
   const btn = buttonConfig[type];
+  
   return (
     <button className={btn.style}>
       {btn.text}

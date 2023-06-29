@@ -13,8 +13,8 @@ export const links: IHeaderLinks[] = [
   },
   {
     id: 3,
-    title: 'Recommendations',
-    link: '/recommendations',
+    title: 'Blog',
+    link: '/blog',
   },
   {
     id: 4,

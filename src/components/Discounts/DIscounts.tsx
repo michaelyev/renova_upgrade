@@ -13,7 +13,11 @@ export const Discounts: FC = (): ReactElement => {
         </div>
       </div>
 
+      
       <Carousel />
+      
+
+      
     </section>
   );
 };

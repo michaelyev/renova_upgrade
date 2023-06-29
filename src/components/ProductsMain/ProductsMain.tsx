@@ -17,9 +17,9 @@ export const Products: FC = (): ReactElement => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
               adipisicing elit. A?
             </p>
-            <div className=' ml-auto '>
-            <Button type="browse" imageName="right_arrow" />
-            </div>
+            
+            <Button type="browseRight" imageName="right_arrow" />
+            
 
             
           </div>
@@ -41,7 +41,7 @@ export const Products: FC = (): ReactElement => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
               adipisicing elit. A?
             </p>
-            <Button type="browse" imageName="right_arrow" />
+            <Button type="browseLeft" imageName="right_arrow" />
           </div>
         </div>
 
@@ -55,7 +55,7 @@ export const Products: FC = (): ReactElement => {
               adipisicing elit. A?
             </p>
 
-            <Button type="browse" imageName="right_arrow" />
+            <Button type="browseRight" imageName="right_arrow" />
           </div>
           <div className=" w-1/2 mt-[40px] ml-[20px]">
             <Image src="/images/products_countertops.jpg" width={650} height={296} alt="count" />
