@@ -6,19 +6,36 @@ import Link from 'next/link'
 
 const ProductCard = (props) => {
   // const {title } = purpose;
+  if (!props) {
+    return <>Loading...</>; // Render a loading state or placeholder
+  }
+
+  const {
+    id,
+    productName,
+    title,
+    productCode,
+    image,
+    status,
+    description,
+    rating,
+    price,
+    discountedPrice,
+    characteristics,
+  } = props;
   
   return (
     <li>
           <div>
             <div className=" h-[280px] w-[280px]  ">
-              <Image alt='' src={props.imageUrl} width={280} height={280}/>
+              <Image alt='' src={props.image} width={280} height={280}/>
               <div className=" flex justify-center text-main1 text-5xl bg-accent h-[80px] w-[203px] items-center">
                 -20 %
               </div>
             </div>
             <div className="h-[99px] w-[280px] bg-main1 px-[24px]">
               <h3 className="font-inter font-normal text-base leading-[1.21] text-left  pt-[8px]">
-              <Link href={`/products/${encodeURIComponent(props.color?.title)}`}>{props.color?.title}</Link> 
+              <Link href={`/products/${encodeURIComponent(props.id)}`}>{props.title}</Link> 
 {/*                 <Link href={`${}`}>Alebaster</Link>
  */}              </h3>
 

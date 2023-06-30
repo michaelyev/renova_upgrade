@@ -1,48 +1,5 @@
 [
-    {
-      "id": 1,
-      "productName": "Carrara Marble Countertop",
-      "title": "Carrara Marble Countertop - 120x60cm",
-      "productCode": "123456",
-      "image": "/images/products/alabaster-white-quartz.jpg",
-      "status": "In Stock",
-      "description": "This Carrara marble countertop is a beautiful and durable option for your kitchen or bathroom. It is made from high-quality marble that is known for its elegant white color and striking veining. The countertop is also easy to care for and maintain.",
-      "rating": 4.5,
-      "price": "1,200",
-      "discountedPrice": 900,
-      "characteristics": {
-        "manufacturer": "Carrara Marble Company",
-        "model": "CM-12345",
-        "size": "120x60cm",
-        "purpose": "Kitchen",
-        "surface": "Polished",
-        "design": "Traditional",
-        "material": "Marble",
-        "type": "Solid"
-      }
-    },
-    {
-      "id": 2,
-      "productName": "Silestone Quartz Countertop",
-      "title": "Silestone Quartz Countertop - 120x60cm",
-      "productCode": "789012",
-      "image": "/images/products/alabaster-white-quartz.jpg",
-      "status": "In Stock",
-      "description": "This Silestone quartz countertop is a beautiful and durable option for your kitchen or bathroom. It is made from high-quality quartz that is known for its strength and resistance to stains and scratches. The countertop is also easy to care for and maintain.",
-      "rating": 4.8,
-      "price": 1500,
-      "discountedPrice": 1200,
-      "characteristics": {
-        "manufacturer": "Silestone",
-        "model": "SQ-7890",
-        "size": "120x60cm",
-        "purpose": "Kitchen",
-        "surface": "Polished",
-        "design": "Modern",
-        "material": "Quartz",
-        "type": "Solid"
-      }
-    },
+    
     {
       "id": 3,
       "productName": "Granite Countertop",
@@ -195,6 +152,28 @@
         "design": "Modern",
         "material": "Quartz",
         "type": "Vanity"
+      }
+    },
+    {
+      "id": 10,
+      "productName": "Marble Dining Table",
+      "title": "Marble Dining Table - Round",
+      "productCode": "345678",
+      "image": "/images/products/alabaster-white-quartz.jpg",
+      "status": "In Stock",
+      "description": "Add a touch of luxury to your dining area with this exquisite marble dining table. The round shape creates an intimate and stylish setting. The marble top is durable and easy to clean, making it perfect for everyday use.",
+      "rating": 4.8,
+      "price": 2000,
+      "discountedPrice": 1800,
+      "characteristics": {
+        "manufacturer": "Marble Works",
+        "model": "MW-34567",
+        "size": "Round",
+        "purpose": "Dining Room",
+        "surface": "Polished",
+        "design": "Contemporary",
+        "material": "Marble",
+        "type": "Table"
       }
     }
   

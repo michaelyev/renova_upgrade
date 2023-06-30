@@ -20,7 +20,7 @@ const ProductList = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getData(`/${activeTab}.json`);
-      dispatch(setProducts(data[activeTab]));
+      dispatch(setProducts(data));
       
     };
 
@@ -29,7 +29,9 @@ const ProductList = () => {
   }, [activeTab, dispatch]);
 
 
+  console.log(products)
 
+  
 
   return (
     <section>

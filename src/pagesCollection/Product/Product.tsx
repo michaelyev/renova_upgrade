@@ -12,7 +12,7 @@ export const Product = ({id}) => {
     useEffect(() => {
       const fetchData = async () => {
         const data = await getData('/countertops.json');
-        setProductData(data);
+        setProductData(data.filter((product) => product?.id === +id));
       };
 
       fetchData();
