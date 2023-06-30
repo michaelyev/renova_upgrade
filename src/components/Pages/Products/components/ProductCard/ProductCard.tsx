@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const ProductCard = (props) => {
   // const {title } = purpose;
-  console.log(props)
+  
   return (
     <li>
           <div>

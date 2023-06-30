@@ -1,184 +1,46 @@
-{
-    "countertops": [
-        {
-            "id": 1,
-            "manufacturer": {
-                "title": "Manufacturer",
-                "company": "MSI"
-            },
-            "color": {
-                "name": "Color",
-                "title": "ALABASTER WHITE"
-            },
-            "purpose": {
-                "title": "Purpose",
-                "text": "Wall, Countertop"
-            },
-            "surface": {
-                "title": "Style",
-                "style": "Marble - Subtle Veins"
-            },
-            "material": {
-                "title": "Material",
-                "material": "Quartz"
-            },
-            "imageUrl": "/images/products/alebaster-white-quartz.jpg",
-            "price": {
-                "title": "Price",
-                "price": "$20.99/sqft"
-            },
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isChecked": false
-        },
-        {
-            "id": 2,
-            "manufacturer": {
-                "title": "Manufacturer",
-                "company": "Samsung"
-            },
-            "color": {
-                "name": "Color",
-                "title": "ONYX BLACK"
-            },
-            "purpose": {
-                "title": "Purpose",
-                "text": "Floor, Wall"
-            },
-            "surface": {
-                "title": "Style",
-                "style": "Granite - Bold Pattern"
-            },
-            "material": {
-                "title": "Material",
-                "material": "Quartz"
-            },
-            "imageUrl": "/images/products/arctic-white-quartz.jpg",
-            "price": {
-                "title": "Price",
-                "price": "$25.99/sqft"
-            },
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isChecked": false
-        },
-        {
-            "id": 3,
-            "manufacturer": {
-                "title": "Manufacturer",
-                "company": "LG"
-            },
-            "color": {
-                "name": "Color",
-                "title": "CRYSTAL BLUE"
-            },
-            "purpose": {
-                "title": "Purpose",
-                "text": "Countertop"
-            },
-            "surface": {
-                "title": "Style",
-                "style": "Limestone - Subtle Pattern"
-            },
-            "material": {
-                "title": "Material",
-                "material": "Quartz"
-            },
-            "imageUrl": "/images/products/ash-gray-quartz.jpg",
-            "price": {
-                "title": "Price",
-                "price": "$22.99/sqft"
-            },
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isChecked": false
-        },
-        {
-            "id": 4,
-            "manufacturer": {
-                "title": "Manufacturer",
-                "company": "Siemens"
-            },
-            "color": {
-                "name": "Color",
-                "title": "SILVER GRAY"
-            },
-            "purpose": {
-                "title": "Purpose",
-                "text": "Wall"
-            },
-            "surface": {
-                "title": "Style",
-                "style": "Slate - Rough Texture"
-            },
-            "material": {
-                "title": "Material",
-                "material": "Quartz"
-            },
-            "imageUrl": "/images/products/babylon-gray-quartz.jpg",
-            "price": {
-                "title": "Price",
-                "price": "$18.99/sqft"
-            },
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isChecked": false
-        },
-        {
-            "id": 5,
-            "manufacturer": {
-                "title": "Manufacturer",
-                "company": "Whirlpool"
-            },
-            "color": {
-                "name": "Color",
-                "title": "IVORY CREAM"
-            },
-            "purpose": {
-                "title": "Purpose",
-                "text": "Countertop"
-            },
-            "surface": {
-                "title": "Style",
-                "style": "Travertine - Smooth Texture"
-            },
-            "material": {
-                "title": "Material",
-                "material": "Quartz"
-            },
-            "imageUrl": "/images/products/babylon-gray-concrete-quartz.jpg",
-            "price": {
-                "title": "Price",
-                "price": "$21.99/sqft"
-            },
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isChecked": false
-        },
-        {
-            "id": 6,
-            "manufacturer": {
-                "title": "Manufacturer",
-                "company": "Electrolux"
-            },
-            "color": {
-                "name": "Color",
-                "title": "SAND BEIGE"
-            },
-            "purpose": {
-                "title": "Purpose",
-                "text": "Floor, Countertop"
-            },
-            "surface": {
-                "title": "Style",
-                "style": "Soapstone - Subtle Pattern"
-            },
-            "material": {
-                "title": "Material",
-                "material": "Quartz"
-            },
-            "imageUrl": "/images/products/bayshore-sand-quartz.jpg",
-            "price": {
-                "title": "Price",
-                "price": "$24.99/sqft"
-            },
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "isChecked": false
-        }
-    ]
-}
+[
+  {
+    "id": 1,
+    "productName": "Carrara Marble Countertop",
+    "title": "Carrara Marble Countertop - 120x60cm",
+    "productCode": "123456",
+    "image": "https://www.example.com/images/countertops/carrara-marble-countertop.jpg",
+    "status": "In Stock",
+    "description": "This Carrara marble countertop is a beautiful and durable option for your kitchen or bathroom. It is made from high-quality marble that is known for its elegant white color and striking veining. The countertop is also easy to care for and maintain.",
+    "rating": 4.5,
+    "price": "1,200",
+    "discountedPrice": 900,
+    "characteristics": {
+      "manufacturer": "Carrara Marble Company",
+      "model": "CM-12345",
+      "size": "120x60cm",
+      "purpose": "Kitchen",
+      "surface": "Polished",
+      "design": "Traditional",
+      "material": "Marble",
+      "type": "Solid"
+    }
+  },
+  {
+    "id": 2,
+    "productName": "Silestone Quartz Countertop",
+    "title": "Silestone Quartz Countertop - 120x60cm",
+    "productCode": "789012",
+    "image": "https://www.example.com/images/countertops/silestone-quartz-countertop.jpg",
+    "status": "In Stock",
+    "description": "This Silestone quartz countertop is a beautiful and durable option for your kitchen or bathroom. It is made from high-quality quartz that is known for its strength and resistance to stains and scratches. The countertop is also easy to care for and maintain.",
+    "rating": 4.8,
+    "price": 1500,
+    "discountedPrice": 1200,
+    "characteristics": {
+      "manufacturer": "Silestone",
+      "model": "SQ-7890",
+      "size": "120x60cm",
+      "purpose": "Kitchen",
+      "surface": "Polished",
+      "design": "Modern",
+      "material": "Quartz",
+      "type": "Solid"
+    }
+  }
+]

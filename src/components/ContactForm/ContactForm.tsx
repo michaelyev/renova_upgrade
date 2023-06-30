@@ -27,7 +27,7 @@ export const ContactForm: FC<ContactFormProps> = ({ setModalOpen }) => {
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
+    
     setModalOpen(false);
     reset();
   };

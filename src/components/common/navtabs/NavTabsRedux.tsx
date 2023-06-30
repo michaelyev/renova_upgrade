@@ -10,7 +10,7 @@ const NavTabsRedux = ({tabName, style, border}) => {
     const dispatch = useDispatch()
 
     const handleClick = (id) => {
-      console.log(id)
+      
       if (tabName === 'productSort') {
         dispatch(setActiveTabSort(id))
       }
@@ -19,7 +19,6 @@ const NavTabsRedux = ({tabName, style, border}) => {
       }
     }
 
-    console.log(activeTabCategory)
     
   return (
     

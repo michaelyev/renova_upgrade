@@ -23,7 +23,6 @@ export const BlogArticlePage = ({ blogId }) => {
     }
   }, [data, blogId]); // Запускаем заново при изменении данных или blogId
 
-  console.log(article);
 
   const content = article?.body
 
