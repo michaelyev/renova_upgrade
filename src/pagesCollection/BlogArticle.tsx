@@ -1,27 +1,36 @@
 'use client'
 import { getData } from '@/helpers/getData'
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { setBlog } from '@/app/redux/features/blogDataSlice'
 
 export const BlogArticlePage = ({ blogId }) => {
-  const [data, setData] = useState(null);
+  const blog = useSelector(state => state.blogData)
+  const dispatch = useDispatch()
+
+  //const [data, setData] = useState(null);
   const [article, setArticle] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await getData('/blogData.json');
-      setData(result);
+      dispatch(setBlog(result))
+      //setData(result);
     }
 
     fetchData();
-  }, [blogId]);
+  }, [blogId, dispatch, ]);
+
+  console.log(blog)
 
   useEffect(() => {
     // Ищем статью по id только когда данные загружены
-    if (data) {
-      const foundArticle = data.find(item => item.id === blogId);
+    if (blog) {
+      const foundArticle = blog.find(item => item.id === blogId);
       setArticle(foundArticle);
     }
-  }, [data, blogId]); // Запускаем заново при изменении данных или blogId
+  }, [blog, blogId]); // Запускаем заново при изменении данных или blogId
 
 
   const content = article?.body

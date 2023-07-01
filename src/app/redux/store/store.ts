@@ -2,13 +2,15 @@ import { configureStore } from '@reduxjs/toolkit';
 import checkBoxReducer from '../features/checkBoxSlice';
 import {navTabCategoryReducer, navTabSortReducer } from '../features/navTabsSlice';
 import productDataReducer from '../features/productDataSlice';
+import blogDataReducer from '../features/blogDataSlice'
 
 export const store = configureStore({
   reducer: {
     checkbox: checkBoxReducer,
     navtabcategory: navTabCategoryReducer,
     navtabsort: navTabSortReducer,
-    productData: productDataReducer
+    productData: productDataReducer,
+    blogData: blogDataReducer
   }
 });
 

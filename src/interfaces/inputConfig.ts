@@ -12,4 +12,5 @@ export interface IInputType {
   selection?: IInputProps;
   productSearch?: IInputProps;
   contactForm?: IInputProps;
+  blogSearch?: IInputProps;
 }
