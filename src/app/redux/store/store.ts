@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import checkBoxReducer from '../features/checkBoxSlice';
-import {navTabCategoryReducer, navTabSortReducer } from '../features/navTabsSlice';
+import { navTabCategoryReducer, navTabSortReducer } from '../features/navTabsSlice';
 import productDataReducer from '../features/productDataSlice';
-import blogDataReducer from '../features/blogDataSlice'
+import blogDataReducer from '../features/blogDataSlice';
 
 export const store = configureStore({
   reducer: {
@@ -10,12 +10,11 @@ export const store = configureStore({
     navtabcategory: navTabCategoryReducer,
     navtabsort: navTabSortReducer,
     productData: productDataReducer,
-    blogData: blogDataReducer
-  }
+    blogData: blogDataReducer,
+  },
 });
 
-
 // Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof store.dispatch 
+export type AppDispatch = typeof store.dispatch;

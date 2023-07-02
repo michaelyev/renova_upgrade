@@ -11,20 +11,13 @@ import 'swiper/css/pagination';
 import { FreeMode, Pagination } from 'swiper';
 
 type CardType = {
-  card: ReactElement
-}
+  card: ReactElement;
+};
 
-export const Reviews:FC<CardType> = ({ card }):ReactElement => {
+export const Reviews: FC<CardType> = ({ card }): ReactElement => {
   return (
     <>
-      <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        freeMode={true}
-        
-        modules={[FreeMode, Pagination]}
-        className="mySwiper"
-      >
+      <Swiper slidesPerView={3} spaceBetween={30} freeMode={true} modules={[FreeMode, Pagination]} className="mySwiper">
         <SwiperSlide>{card}</SwiperSlide>
         <SwiperSlide>{card}</SwiperSlide>
         <SwiperSlide>{card}</SwiperSlide>
@@ -34,4 +27,4 @@ export const Reviews:FC<CardType> = ({ card }):ReactElement => {
       </Swiper>
     </>
   );
-}
+};

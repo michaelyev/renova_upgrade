@@ -1,20 +1,23 @@
-'use client'
+'use client';
 import Image from 'next/image';
 import { FC, ReactElement } from 'react';
 import { ContactForm } from '../ContactForm';
 import { useState } from 'react';
 
 export const Hero: FC = (): ReactElement => {
-
-  const [modalOpen, setModalOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <section className="bg-heroImage bg-cover pt-[50px] h-screen">
       <div className="container relative ">
-        <div className={`${modalOpen ? '' : 'hidden'} absolute w-screen bg-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}>
-        <ContactForm setModalOpen={setModalOpen}/>
+        <div
+          className={`${
+            modalOpen ? '' : 'hidden'
+          } absolute w-screen bg-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
+        >
+          <ContactForm setModalOpen={setModalOpen} />
         </div>
-        
+
         <div className="flex mt-[64px] mb-[16px] items-center">
           <Image className="" src="images/icons/mdi_location.svg" height={32} width={32} alt="city icon" />
           <span>Seattle</span>
@@ -26,7 +29,9 @@ export const Hero: FC = (): ReactElement => {
         <p className="font-inter font-normal text-lg leading-tight mb-[45px] max-w-[652px]">
           Your imagination, our embodiment. Send us a photo of the room and your wishes, and we will advise you!
         </p>
-        <button onClick={()=> setModalOpen(true)} className="mb-[203px] border-2 px-[48px] py-[24px]  border-accent ">Consultation</button>
+        <button onClick={() => setModalOpen(true)} className="mb-[203px] border-2 px-[48px] py-[24px]  border-accent ">
+          Consultation
+        </button>
       </div>
     </section>
   );

@@ -3,7 +3,6 @@ import { quoteForm } from '@/mockData/mainPageContacts';
 import { contactInfo } from '@/mockData/ourContacts';
 import { Input } from '../common';
 
-
 export const ContactsMain: FC = (): ReactElement => {
   return (
     <section>

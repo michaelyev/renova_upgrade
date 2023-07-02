@@ -1,8 +1,8 @@
-'use client'
-import { FC } from "react";
-import { useForm, SubmitHandler, Controller } from "react-hook-form";
-import { Input } from "../common";
-import { contactFormValidation } from "@/constants/contactFormValidation";
+'use client';
+import { FC } from 'react';
+import { useForm, SubmitHandler, Controller } from 'react-hook-form';
+import { Input } from '../common';
+import { contactFormValidation } from '@/constants/contactFormValidation';
 
 type Inputs = {
   name: string;
@@ -22,12 +22,11 @@ export const ContactForm: FC<ContactFormProps> = ({ setModalOpen }) => {
     control,
     handleSubmit,
     reset,
-    
+
     formState: { errors },
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    
     setModalOpen(false);
     reset();
   };
@@ -43,29 +42,27 @@ export const ContactForm: FC<ContactFormProps> = ({ setModalOpen }) => {
       </div>
       <div className="flex gap-[20px] mx-auto mb-[40px]">
         <div className="flex flex-col">
-          
           <input
             id="contactForm"
             className="h-[48px] w-[377px] mb-[16px] pl-[48px] py-[15px]  placeholder-additional2 text-additional2 bg-main1"
             placeholder="Name"
-            {...register("name", contactFormValidation.name)}
+            {...register('name', contactFormValidation.name)}
           />
           {errors.name && <p>{errors.name.message}</p>}
           <input
             id="contactForm"
             className="h-[48px] w-[377px] mb-[16px] pl-[48px] py-[15px]  placeholder-additional2 text-additional2 bg-main1"
             placeholder="Phone"
-            {...register("phone", contactFormValidation.phone)}
+            {...register('phone', contactFormValidation.phone)}
           />
           {errors.name && <p>{errors.name.message}</p>}
-          
         </div>
         <div className="flex flex-col">
-        <input
+          <input
             id="contactForm"
             className="h-[48px] w-[377px] mb-[16px] pl-[48px] py-[15px]  placeholder-additional2 text-additional2 bg-main1"
             placeholder="E-mail"
-            {...register("email", contactFormValidation.email)}
+            {...register('email', contactFormValidation.email)}
           />
           {errors.name && <p>{errors.name.message}</p>}
           {errors.email && <p>{errors.email.message}</p>}
@@ -73,7 +70,7 @@ export const ContactForm: FC<ContactFormProps> = ({ setModalOpen }) => {
             id="contactForm"
             className="h-[48px] w-[377px] mb-[16px] pl-[48px] py-[15px]  placeholder-additional2 text-additional2 bg-main1"
             placeholder="Location"
-            {...register("name")}
+            {...register('name')}
           />
           {errors.name && <p>{errors.name.message}</p>}
         </div>
@@ -83,8 +80,6 @@ export const ContactForm: FC<ContactFormProps> = ({ setModalOpen }) => {
         <p className="text-additional2">Share a photo or file to enhance our assistance to you!</p>
       </div>
       <input type="submit" className="mx-auto border-accent border-2 w-[242px] h-[72px]" />
-        
-      
     </form>
   );
 };

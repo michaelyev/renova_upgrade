@@ -7,8 +7,7 @@ import { brandLogos } from '@/constants/manufacturers';
 import { BrandLogos } from '@/interfaces/manufacturers';
 import { BrandLogosType } from '@/interfaces/brandLogosType';
 
-
-export const Manufacturers: FC = ():ReactElement => {
+export const Manufacturers: FC = (): ReactElement => {
   const [activeTrade, setActiveTrade] = useState<BrandLogosType>('countertops');
 
   return (

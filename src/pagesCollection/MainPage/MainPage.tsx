@@ -20,8 +20,8 @@ export const MainPage = () => {
       <Video />
       <Manufacturers />
       <Portfolio />
-      <Reviews card={<ProductsCard/>}/>
-      <Ratings  />
+      <Reviews card={<ProductsCard />} />
+      <Ratings />
       <Blog />
       <Faq />
       <ContactsMain />

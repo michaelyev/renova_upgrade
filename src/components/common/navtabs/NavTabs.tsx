@@ -6,8 +6,6 @@ import { BrandLogos } from '@/interfaces/manufacturers';
 import { INavTabsConfig } from '@/interfaces/navTabs';
 import React, { ReactElement, useState } from 'react';
 
-
-
 interface NavTabsStateProps {
   tabName: keyof INavTabsConfig;
   style?: string;
@@ -21,7 +19,7 @@ export const NavTabsState: React.FC<NavTabsStateProps> = ({ tabName, style, bord
 
   const handleClick = (tabId: BrandLogosType) => {
     setActiveTab(tabId);
-    onTabChange(tabId)
+    onTabChange(tabId);
   };
 
   return (
@@ -42,9 +40,3 @@ export const NavTabsState: React.FC<NavTabsStateProps> = ({ tabName, style, bord
     </div>
   );
 };
-
-
-
-
-
-

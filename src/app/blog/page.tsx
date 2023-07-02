@@ -1,31 +1,21 @@
-'use client'
-import { ContactForm, Input } from '@/components'
+'use client';
+import { ContactForm, Input } from '@/components';
 import { BlogCard } from '@/components/BlogCard/BlogCard';
 import { FC, ReactElement, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { setBlog } from '@/app/redux/features/blogDataSlice';
+import { fetchBlogData } from '@/app/redux/features/blogDataSlice';
 import { useDispatch } from 'react-redux';
 import { getData } from '@/helpers/getData';
 
- const Blog:FC = ():ReactElement => {
-  const blogCard = useSelector(state => state.blogData)
-  const dispatch = useDispatch()
+const Blog: FC = (): ReactElement => {
+  const blogCard = useSelector((state) => state.blogData);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const blog = await getData('/blogData.json')
-      dispatch(setBlog(blog))
-    }
-    fetchData()
+    dispatch(fetchBlogData())
   }, [dispatch])
 
-  
- 
-
   return (
-
-    
-
     <section className="pt-[154px]">
       <div className="container ">
         <div className="flex justify-center">
@@ -36,16 +26,13 @@ import { getData } from '@/helpers/getData';
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate nobis error quas laborum pariatur illo sit
           eaque deleniti? Voluptas, minus.
         </p>
-        <div className='flex flex-wrap gap-[20px] mb-[130px]'>
-
-        {blogCard? (blogCard.map(blogI => <BlogCard {...blogI}/> )) : ('Loading')}
-
+        <div className="flex flex-wrap gap-[20px] mb-[130px]">
+          {blogCard.map((blogI) => <BlogCard {...blogI} />)}
         </div>
         <ContactForm />
-        
       </div>
     </section>
   );
-}
+};
 
-export default Blog
+export default Blog;

@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import React, { ReactElement } from 'react'
+import React, { ReactElement } from 'react';
 
-export const ProductsCard = ():ReactElement => {
+export const ProductsCard = (): ReactElement => {
   return (
     <div>
       <div className=" h-[428px] w-[374px] bg-slate-600 ">
@@ -20,4 +20,4 @@ export const ProductsCard = ():ReactElement => {
       </div>
     </div>
   );
-}
+};

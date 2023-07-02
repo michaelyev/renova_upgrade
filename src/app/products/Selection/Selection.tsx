@@ -1,5 +1,5 @@
-'use client'
-import React, { useState } from 'react'
+'use client';
+import React, { useState } from 'react';
 import Checkbox from '@mui/material/Checkbox';
 
 import { CheckBox } from '@mui/icons-material';
@@ -9,8 +9,6 @@ import SelectionFaq from './SelectionFaq/SelectionFaq';
 import { Input } from '@/components';
 
 const Selection = () => {
-
-    
   return (
     <section className="max-w-[415px] border-additional1 border-solid border-2 text-left px-[32px] mt-[24px] py-[40px]">
       <h2 className="pb-[16px]">Price</h2>
@@ -27,16 +25,14 @@ const Selection = () => {
       </div>
 
       <Checkboxes />
-
-      
     </section>
   );
-}
+};
 
-export default Selection
+export default Selection;
 
-
-{/* <label className="relative">
+{
+  /* <label className="relative">
         {label}
       <input
         className={input.styles}
@@ -45,4 +41,5 @@ export default Selection
       />
       {input.button}
       
-    </label> */}
+    </label> */
+}

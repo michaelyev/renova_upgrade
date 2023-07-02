@@ -1,1 +1,1 @@
-export type BrandLogosType = 'countertops' | 'cabinets' | 'tile'
+export type BrandLogosType = 'countertops' | 'cabinets' | 'tile';

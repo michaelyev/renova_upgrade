@@ -1,4 +1,4 @@
-import { BrandLogos } from "./manufacturers";
+import { BrandLogos } from './manufacturers';
 
 export interface INavTab {
   id: string;
