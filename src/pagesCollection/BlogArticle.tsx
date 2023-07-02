@@ -22,7 +22,6 @@ export const BlogArticlePage = ({ blogId }) => {
     fetchData();
   }, [blogId, dispatch, ]);
 
-  console.log(blog)
 
   useEffect(() => {
     // Ищем статью по id только когда данные загружены
