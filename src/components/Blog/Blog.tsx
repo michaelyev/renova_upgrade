@@ -1,7 +1,11 @@
 import Image from 'next/image';
 import React, { FC, ReactElement } from 'react';
+import { useSelector } from 'react-redux';
 
 export const Blog: FC = (): ReactElement => {
+  const blogData = useSelector(state =>state.blogData) 
+  console.log(blogData)
+  
   return (
     <section>
       <div className="container">

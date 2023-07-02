@@ -4,6 +4,7 @@ const blogDataSlice = createSlice({
     name: 'blogData',
     initialState: [],
     reducers: {
+        
         setBlog: (state, action) => {
             return action.payload
         }
