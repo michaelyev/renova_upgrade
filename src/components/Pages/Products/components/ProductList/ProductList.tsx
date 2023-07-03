@@ -14,7 +14,7 @@ const ProductList = () => {
   // const [products, setProducts] = useState([])
   const products = useSelector((state) => state.productData);
   const dispatch = useDispatch();
-
+//localstorage and save id
   useEffect(() => {
     const fetchData = async () => {
       const data = await getData(`/${activeTab}.json`);

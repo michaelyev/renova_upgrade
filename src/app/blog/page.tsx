@@ -3,17 +3,20 @@ import { ContactForm, Input } from '@/components';
 import { BlogCard } from '@/components/BlogCard/BlogCard';
 import { FC, ReactElement, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { fetchBlogData } from '@/app/redux/features/blogDataSlice';
+import { blogData, fetchBlogData } from '@/app/redux/features/blogDataSlice';
 import { useDispatch } from 'react-redux';
 import { getData } from '@/helpers/getData';
+import { useActions } from '@/hook/useActions';
 
 const Blog: FC = (): ReactElement => {
-  const blogCard = useSelector((state) => state.blogData);
-  const dispatch = useDispatch();
+  const {blog} = useSelector(blogData);
+  const {fetchBlogData} = useActions()
 
-  useEffect(() => {
-    dispatch(fetchBlogData())
-  }, [dispatch])
+  if(!blog.length) {
+    fetchBlogData()
+  }
+
+
 
   return (
     <section className="pt-[154px]">
@@ -27,7 +30,7 @@ const Blog: FC = (): ReactElement => {
           eaque deleniti? Voluptas, minus.
         </p>
         <div className="flex flex-wrap gap-[20px] mb-[130px]">
-          {blogCard.map((blogI) => <BlogCard {...blogI} />)}
+          {blog.map((blogI) => <BlogCard {...blogI} />)}
         </div>
         <ContactForm />
       </div>
