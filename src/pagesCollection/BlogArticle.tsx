@@ -6,16 +6,15 @@ import { useDispatch } from 'react-redux';
 import { blogData } from '@/app/redux/features/blogDataSlice';
 import { useActions } from '@/hook/useActions';
 
-
 export const BlogArticlePage = ({ blogId }) => {
-  const {blog, loading} = useSelector(blogData);
-  const {fetchBlogData} = useActions()
+  const { blog, loading } = useSelector(blogData);
+  const { fetchBlogData } = useActions();
 
-  if(!blog.length) {
-    fetchBlogData()
+  if (!blog.length) {
+    fetchBlogData('blogData');
   }
-  
-  const article = blog.find((item) => item.id === blogId)
+
+  const article = blog.find((item) => item.id === blogId);
 
   return (
     <section>

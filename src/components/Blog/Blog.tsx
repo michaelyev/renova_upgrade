@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { blogData, fetchBlogData } from '@/app/redux/features/blogDataSlice';
 import { useActions } from '@/hook/useActions';
 import Image from 'next/image';
@@ -7,15 +7,15 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
 export const Blog: FC = (): ReactElement => {
-  const {blog} = useSelector(blogData)
-  const {fetchBlogData} = useActions()
-  
-  useEffect(() => {
-    fetchBlogData()
-  }, [])
+  const { blog } = useSelector(blogData);
+  const { fetchBlogData } = useActions();
 
-  console.log(blog.length)
-  
+  useEffect(() => {
+    fetchBlogData();
+  }, []);
+
+  console.log(blog.length);
+
   return (
     <section>
       <div className="container">
@@ -26,7 +26,6 @@ export const Blog: FC = (): ReactElement => {
             alias vero ab deserunt dolores impedit mollitia. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
           </p>
         </div>
-        
 
         <div className="flex justify-around">
           <div>

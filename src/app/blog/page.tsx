@@ -9,14 +9,12 @@ import { getData } from '@/helpers/getData';
 import { useActions } from '@/hook/useActions';
 
 const Blog: FC = (): ReactElement => {
-  const {blog} = useSelector(blogData);
-  const {fetchBlogData} = useActions()
+  const { blog } = useSelector(blogData);
+  const { fetchBlogData } = useActions();
 
-  if(!blog.length) {
-    fetchBlogData()
+  if (!blog.length) {
+    fetchBlogData('blogData');
   }
-
-
 
   return (
     <section className="pt-[154px]">
@@ -30,7 +28,9 @@ const Blog: FC = (): ReactElement => {
           eaque deleniti? Voluptas, minus.
         </p>
         <div className="flex flex-wrap gap-[20px] mb-[130px]">
-          {blog.map((blogI) => <BlogCard {...blogI} />)}
+          {blog.map((blogI) => (
+            <BlogCard {...blogI} />
+          ))}
         </div>
         <ContactForm />
       </div>

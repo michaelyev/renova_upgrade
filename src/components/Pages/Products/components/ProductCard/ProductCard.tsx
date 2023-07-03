@@ -1,9 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useSelector, useDispatch } from 'react-redux';
+import { setSelectedCard } from '@/app/redux/features/selectedCardSlice';
 
 const ProductCard = (props) => {
-  // const {title } = purpose;
+  //const selected = useSelector((state) => state.selectedCard.selectedCard);
+  //const dispatch = useDispatch();
+
   if (!props) {
     return <>Loading...</>; // Render a loading state or placeholder
   }
@@ -22,20 +26,24 @@ const ProductCard = (props) => {
     characteristics,
   } = props;
 
+  /* const handleSelectionClick = () => {
+    dispatch(setSelectedCard(id));
+  }; */
+
   return (
     <li>
-      <div>
+      <div /* onClick={handleSelectionClick} */>
         <div className=" h-[280px] w-[280px]  ">
           <Image alt="" src={props.image} width={280} height={280} />
           <div className=" flex justify-center text-main1 text-5xl bg-accent h-[80px] w-[203px] items-center">
-            -20 %
+            {/* {selected ? ( */}
+              <strong>-20 %</strong>
+            {/* ) : null} */}
           </div>
         </div>
         <div className="h-[99px] w-[280px] bg-main1 px-[24px]">
           <h3 className="font-inter font-normal text-base leading-[1.21] text-left  pt-[8px]">
             <Link href={`/products/${encodeURIComponent(props.id)}`}>{props.title}</Link>
-            {/*                 <Link href={`${}`}>Alebaster</Link>
-             */}{' '}
           </h3>
 
           <div className="flex justify-between items-center mt-[8px]">
