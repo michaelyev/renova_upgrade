@@ -1,6 +1,7 @@
 'use client';
 import { ProductPageCard } from '@/components/ProductPageCard/ProductPageCard';
 import { getData } from '@/helpers/getData';
+import { selectedCardLocalStorage } from '@/helpers/selectedCardLocalStorage';
 import { data } from 'autoprefixer';
 import React, { useState, useEffect } from 'react';
 
@@ -18,9 +19,11 @@ export const Product = ({ id }) => {
 
   const filteredProduct = productData.find((product) => product?.id === +id);
 
+  const selectedCards = selectedCardLocalStorage()
+
   return (
     <>
-      <ProductPageCard props={filteredProduct} />
+      <ProductPageCard props={filteredProduct} selectedCards={selectedCards} />
     </>
   );
 };

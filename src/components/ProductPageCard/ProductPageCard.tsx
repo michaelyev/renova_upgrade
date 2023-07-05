@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '../common';
 import { Reviews } from '../Reviews/Reviews';
 
-export const ProductPageCard = ({ props }) => {
+export const ProductPageCard = ({ props, selectedCards }) => {
   if (!props) {
     return <>Loading...</>; // Render a loading state or placeholder
   }
@@ -22,7 +22,16 @@ export const ProductPageCard = ({ props }) => {
     characteristics,
   } = props;
 
+  const handleSelectionClick = () => {
+    if(selectedCards.find(card => card.id === id)) return
+    selectedCards.push(id)
+    localStorage.setItem('selectedCard', JSON.stringify(selectedCards))
+    
+  };
+
   return (
+
+
     <div>
       <section className="container pt-[108px] pb-[64px]">
         <button className="pb-[48px] p1 text-additional2">Back to Products</button>
@@ -31,8 +40,8 @@ export const ProductPageCard = ({ props }) => {
           <div className="max-w-[538px]">
             <h1 className="pb-[16px] h2">{productName}</h1>
             <p className="pb-[32px]">{productCode}</p>
-            <div className="w-[538px] h-[480px] relative mb-[64px]">
-              <Image alt="" src={image} fill />
+            <div  className="w-[538px] h-[480px] relative mb-[64px]">
+              <Image  alt="" src={image} fill />
             </div>
             <h3 className="mb-[32px] h5">Characteristics</h3>
             <ul className="p1">
@@ -71,7 +80,7 @@ export const ProductPageCard = ({ props }) => {
             </ul>
           </div>
           <div className="pt-[108px]">
-            <Image alt="" className="pb-[21px]" src="/images/icons/discounts_like.svg" height={33} width={33} />
+            <Image onClick={handleSelectionClick} alt="" className="pb-[21px]" src="/images/icons/discounts_like.svg" height={33} width={33} />
             <div className="flex items-center mb-[16px]">
               <p className=" mr-[8px] h5">Status:</p>
               <p className="p1 ">{status}</p>

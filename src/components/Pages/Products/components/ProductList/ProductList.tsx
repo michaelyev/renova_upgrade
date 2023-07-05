@@ -7,25 +7,25 @@ import { getData } from '@/helpers/getData';
 import { useSelector, useDispatch } from 'react-redux';
 import { productData, fetchData } from '@/app/redux/features/productDataSlice';
 import { useActions } from '@/hook/useActions';
+import { selectedCardLocalStorage } from '@/helpers/selectedCardLocalStorage';
 
 const ProductList = () => {
-  const activeTab = useSelector((state) => state.navtabcategory.activeTab);
 
-  const { fetchData } = useActions();
+  const[selectedCards, setSelectedCards] = useState<number[]>([])
+  
+  useEffect(()=> {
+    setSelectedCards(selectedCardLocalStorage())
+  },[])
+  
   const products = useSelector(productData);
-
-  useEffect(() => {
-    fetchData(activeTab);
-  }, [fetchData, activeTab]);
-
-  //localstorage and save id
 
 
   return (
     <section>
       <ul className="flex flex-wrap justify-between gap-[16px] m-width-[] ">
         {products?.map((product) => {
-          return <ProductCard key={product.id} {...product} />;
+          return <ProductCard key={product.id} {...product} 
+          selectedCards={selectedCards} setSelectedCards={setSelectedCards}/>;
         })}
       </ul>
     </section>

@@ -1,13 +1,9 @@
+'use client'
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useSelector, useDispatch } from 'react-redux';
-import { setSelectedCard } from '@/app/redux/features/selectedCardSlice';
 
 const ProductCard = (props) => {
-  //const selected = useSelector((state) => state.selectedCard.selectedCard);
-  //const dispatch = useDispatch();
-
   if (!props) {
     return <>Loading...</>; // Render a loading state or placeholder
   }
@@ -24,20 +20,25 @@ const ProductCard = (props) => {
     price,
     discountedPrice,
     characteristics,
+    selectedCards,
+    setSelectedCards
   } = props;
 
-  /* const handleSelectionClick = () => {
-    dispatch(setSelectedCard(id));
-  }; */
+  const handleSelectionClick = () => {
+    console.log(selectedCards);
+    if (selectedCards.find(card => card.id === id)) return;
+    setSelectedCards((selectedCards)=>[...selectedCards, {id, productName, image, price, discountedPrice}])
+    localStorage.setItem('selectedCard', JSON.stringify(selectedCards));
+  };
 
   return (
     <li>
-      <div /* onClick={handleSelectionClick} */>
+      <div>
         <div className=" h-[280px] w-[280px]  ">
           <Image alt="" src={props.image} width={280} height={280} />
           <div className=" flex justify-center text-main1 text-5xl bg-accent h-[80px] w-[203px] items-center">
             {/* {selected ? ( */}
-              <strong>-20 %</strong>
+            <strong>-20 %</strong>
             {/* ) : null} */}
           </div>
         </div>
@@ -49,7 +50,17 @@ const ProductCard = (props) => {
           <div className="flex justify-between items-center mt-[8px]">
             <h4 className="font-darkGrotesque text-4xl text-main ">20$/m2</h4>
             <h4 className="text-additional2">25$/m2</h4>
-            <Image alt="" src="/images/icons/discounts_like.svg" width={26} height={26} />
+            {(selectedCards?.find(card => card.id === id)) ? (
+              'selected'
+            ) : (
+              <Image
+                onClick={handleSelectionClick}
+                alt=""
+                src="/images/icons/discounts_like.svg"
+                width={26}
+                height={26}
+              />
+            )}
           </div>
         </div>
       </div>
