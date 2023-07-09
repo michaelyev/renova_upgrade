@@ -1,9 +1,24 @@
+'use client'
 import Image from 'next/image';
 import Carousel from './Carousel';
-import { FC, ReactElement } from 'react';
+import { FC, ReactElement, useEffect, useState } from 'react';
 import { Button } from '../common';
+import { getData } from '@/helpers/getData';
+import { selectedCardLocalStorage } from '@/helpers/selectedCardLocalStorage';
 
 export const Discounts: FC = (): ReactElement => {
+  const [discounts, setDiscounts] = useState([]);
+  const [selectedCards, setSelectedCards] = useState<number[]>([])
+
+  useEffect(() => {
+    const getDiscounts = async () => {
+      const data = await getData('/discounts.json');
+      setDiscounts(data);
+    };
+    setSelectedCards(selectedCardLocalStorage())
+    getDiscounts();
+  }, []);
+
   return (
     <section>
       <div className="container">
@@ -12,8 +27,11 @@ export const Discounts: FC = (): ReactElement => {
           <Button type="browse" imageName="right_arrow" />
         </div>
       </div>
-
-      <Carousel />
+      <Carousel 
+        discounts={discounts} 
+        selectedCards={selectedCards} 
+        setSelectedCards={setSelectedCards} 
+      />
     </section>
   );
 };

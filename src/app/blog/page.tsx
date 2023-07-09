@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { blogData, fetchBlogData } from '@/app/redux/features/blogDataSlice';
 import { useDispatch } from 'react-redux';
 import { getData } from '@/helpers/getData';
-import { useActions } from '@/hook/useActions';
+import { useActions } from '@/hooks/useActions';
 
 const Blog: FC = (): ReactElement => {
   const { blog } = useSelector(blogData);

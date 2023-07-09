@@ -11,7 +11,7 @@ import { fetchData, productData } from '../redux/features/productDataSlice';
 const page = () => {
   
   const selectedCards = selectedCardLocalStorage()
-  
+  //const selectedCards = useSelector(state => state.selectedCard)
   
   console.log(selectedCards)
   return (

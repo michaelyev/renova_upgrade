@@ -11,7 +11,7 @@ import { ContactForm } from '@/components';
 import { getData } from '@/helpers/getData';
 import { useSelector, useDispatch } from 'react-redux';
 import { productData, fetchData } from '@/app/redux/features/productDataSlice';
-import { useActions } from '@/hook/useActions';
+import { useActions } from '@/hooks/useActions';
 
 const Products = () => {
   const activeTab = useSelector((state) => state.navtabcategory.activeTab);

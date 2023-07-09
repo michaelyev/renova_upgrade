@@ -1,6 +1,6 @@
 'use client';
 import { blogData, fetchBlogData } from '@/app/redux/features/blogDataSlice';
-import { useActions } from '@/hook/useActions';
+import { useActions } from '@/hooks/useActions';
 import Image from 'next/image';
 import React, { FC, ReactElement, useEffect } from 'react';
 import { useDispatch } from 'react-redux';

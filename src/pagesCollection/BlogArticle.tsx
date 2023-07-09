@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { blogData } from '@/app/redux/features/blogDataSlice';
-import { useActions } from '@/hook/useActions';
+import { useActions } from '@/hooks/useActions';
 
 export const BlogArticlePage = ({ blogId }) => {
   const { blog, loading } = useSelector(blogData);

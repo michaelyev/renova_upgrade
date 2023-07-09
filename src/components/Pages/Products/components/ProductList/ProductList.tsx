@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { getData } from '@/helpers/getData';
 import { useSelector, useDispatch } from 'react-redux';
 import { productData, fetchData } from '@/app/redux/features/productDataSlice';
-import { useActions } from '@/hook/useActions';
+import { useActions } from '@/hooks/useActions';
 import { selectedCardLocalStorage } from '@/helpers/selectedCardLocalStorage';
 
 const ProductList = () => {

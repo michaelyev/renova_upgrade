@@ -3,6 +3,7 @@ import checkBoxReducer from '../features/checkBoxSlice';
 import { navTabCategoryReducer, navTabSortReducer } from '../features/navTabsSlice';
 import productDataReducer from '../features/productDataSlice';
 import blogDataReducer from '../features/blogDataSlice';
+import selectedCardReducer from '../features/selectedCardSlice';
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     navtabsort: navTabSortReducer,
     productData: productDataReducer,
     blogData: blogDataReducer,
+    selectedCard: selectedCardReducer
   },
 });
 

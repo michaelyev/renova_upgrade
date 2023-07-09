@@ -24,9 +24,9 @@ export const ProductPageCard = ({ props, selectedCards }) => {
 
   const handleSelectionClick = () => {
     if(selectedCards.find(card => card.id === id)) return
-    selectedCards.push(id)
-    localStorage.setItem('selectedCard', JSON.stringify(selectedCards))
-    
+    const newSelectedCards = [...selectedCards, {id, productName, image, price, discountedPrice}]
+    setSelectedCards(newSelectedCards)
+    localStorage.setItem('selectedCard', JSON.stringify(newSelectedCards));
   };
 
   return (

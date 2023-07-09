@@ -27,8 +27,9 @@ const ProductCard = (props) => {
   const handleSelectionClick = () => {
     console.log(selectedCards);
     if (selectedCards.find(card => card.id === id)) return;
-    setSelectedCards((selectedCards)=>[...selectedCards, {id, productName, image, price, discountedPrice}])
-    localStorage.setItem('selectedCard', JSON.stringify(selectedCards));
+    const newSelectedCards = [...selectedCards, {id, productName, image, price, discountedPrice}]
+    setSelectedCards(newSelectedCards)
+    localStorage.setItem('selectedCard', JSON.stringify(newSelectedCards));
   };
 
   return (
