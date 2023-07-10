@@ -1,9 +1,15 @@
 'use client'
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from '@/app/redux/hooks';
+import { setSelectedCards } from '@/app/redux/features/selectedCardSlice';
 
 const ProductCard = (props) => {
+
+  const dispatch = useAppDispatch();
+
   if (!props) {
     return <>Loading...</>; // Render a loading state or placeholder
   }
@@ -20,17 +26,29 @@ const ProductCard = (props) => {
     price,
     discountedPrice,
     characteristics,
-    selectedCards,
-    setSelectedCards
+    selectedCards
   } = props;
 
+  const[isLiked, setIsLiked] = useState(false)
+
+
   const handleSelectionClick = () => {
-    console.log(selectedCards);
-    if (selectedCards.find(card => card.id === id)) return;
+    console.log(selectedCards)
+    const foundCardId = selectedCards.find(card => card.id === id)
+    console.log(foundCardId)
+    if (foundCardId) {
+      const newSelectedCards = selectedCards.filter(card => card.id !== id )
+      console.log(newSelectedCards)
+      dispatch(setSelectedCards(newSelectedCards))
+      localStorage.setItem('selectedCard', JSON.stringify(newSelectedCards));
+      setIsLiked(false)
+      return
+    }
     const newSelectedCards = [...selectedCards, {id, productName, image, price, discountedPrice}]
-    setSelectedCards(newSelectedCards)
+    dispatch(setSelectedCards(newSelectedCards));
     localStorage.setItem('selectedCard', JSON.stringify(newSelectedCards));
-  };
+     setIsLiked(true)
+  }
 
   return (
     <li>
@@ -51,17 +69,15 @@ const ProductCard = (props) => {
           <div className="flex justify-between items-center mt-[8px]">
             <h4 className="font-darkGrotesque text-4xl text-main ">20$/m2</h4>
             <h4 className="text-additional2">25$/m2</h4>
-            {(selectedCards?.find(card => card.id === id)) ? (
-              'selected'
-            ) : (
+              
               <Image
                 onClick={handleSelectionClick}
                 alt=""
-                src="/images/icons/discounts_like.svg"
+                src= {isLiked ? '/images/icons/discounts_like.svg' : '/images/icons/right_arrow.svg'}
                 width={26}
                 height={26}
               />
-            )}
+            
           </div>
         </div>
       </div>

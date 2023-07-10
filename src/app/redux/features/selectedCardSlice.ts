@@ -3,24 +3,24 @@ import { selectedCardLocalStorage } from '@/helpers/selectedCardLocalStorage';
 
 
 type SelectedCardState = {
-  selectedCard: number[];  // Replace any with the actual type
+  selectedCards: number[];  
 };
 
 const initialState: SelectedCardState = {
-  selectedCard: selectedCardLocalStorage(),  // Replace null with the actual initial value
+  selectedCards: selectedCardLocalStorage()
 };
 
 
 const selectedCardSlice = createSlice({
-    name: 'selectedCard',
+    name: 'selectedCards',
     initialState,
     reducers: {
-        setSelectedCard: (state, action: PayloadAction<number>) => {
-            state.selectedCard = [...state.selectedCard, action.payload];
+        setSelectedCards: (state, action: PayloadAction<number>) => {
+            state.selectedCards = [...state.selectedCards, action.payload];
         },
     },
 });
 
-export const { setSelectedCard } = selectedCardSlice.actions;
+export const { setSelectedCards } = selectedCardSlice.actions;
 
 export default selectedCardSlice.reducer;

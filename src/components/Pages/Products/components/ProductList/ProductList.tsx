@@ -8,15 +8,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { productData, fetchData } from '@/app/redux/features/productDataSlice';
 import { useActions } from '@/hooks/useActions';
 import { selectedCardLocalStorage } from '@/helpers/selectedCardLocalStorage';
+import { useAppDispatch } from '@/app/redux/hooks';
 
 const ProductList = () => {
 
-  const[selectedCards, setSelectedCards] = useState<number[]>([])
-  
-  useEffect(()=> {
-    setSelectedCards(selectedCardLocalStorage())
-  },[])
-  
+  const selectedCards = useSelector(state => state.selectedCards.selectedCards)
   const products = useSelector(productData);
 
 
@@ -24,8 +20,9 @@ const ProductList = () => {
     <section>
       <ul className="flex flex-wrap justify-between gap-[16px] m-width-[] ">
         {products?.map((product) => {
-          return <ProductCard key={product.id} {...product} 
-          selectedCards={selectedCards} setSelectedCards={setSelectedCards}/>;
+          return <ProductCard key={product.id} {...product}
+          selectedCards={selectedCards} 
+          />;
         })}
       </ul>
     </section>
