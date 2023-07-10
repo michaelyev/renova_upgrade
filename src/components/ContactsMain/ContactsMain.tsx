@@ -1,9 +1,16 @@
+'use client'
 import React, { FC, ReactElement } from 'react';
 import { quoteForm } from '@/mockData/mainPageContacts';
 import { contactInfo } from '@/mockData/ourContacts';
 import { Input } from '../common';
+import { contactFormValidation } from '@/constants/contactFormValidation';
+import { useForm } from 'react-hook-form';
+import { ContactFormVertical } from '../ContactFormVertical/ContactFormVertical';
+
+
 
 export const ContactsMain: FC = (): ReactElement => {
+  
   return (
     <section>
       <div className="container my-[128px]">
@@ -16,18 +23,9 @@ export const ContactsMain: FC = (): ReactElement => {
         </div>
 
         <div className="flex mb-[128px] justify-between">
-          <div className="flex flex-col items-center border-2 border-solid px-[80px] py-[48px] border-additional1">
-            <h3 className="font-inter font-bold text-xl leading-[1.2104] pb-[40px]">{quoteForm.title}</h3>
-            <p className="mb-[24px]">{quoteForm.description}</p>
-            {quoteForm.fields.map((field, index) => (
-              <Input key={index} id="contactForm" type="text" placeholder={field.placeholder} />
-            ))}
-            <div className="my-[40px] text-center mx-auto">
-              <h3 className="mb-[8px] text-accent underline">Attachment</h3>
-              <p className="text-additional2">Upload file or photo</p>
-            </div>
-            <button className="border-accent border-2 w-[242px] h-[72px]">{quoteForm.buttonText}</button>
-          </div>
+          <ContactFormVertical />
+        
+          
           <div>
             <h3 className="font-inter font-bold text-xl leading-[1.2104] pb-[24px]">{contactInfo.title}</h3>
             <h3 className="mb-[40px]">{contactInfo.phoneNumber}</h3>

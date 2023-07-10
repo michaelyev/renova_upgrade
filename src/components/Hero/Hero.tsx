@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { FC, ReactElement } from 'react';
-import { ContactForm } from '../ContactForm';
+import { ContactForm } from '../ContactFormBig';
 import { useState } from 'react';
 
 export const Hero: FC = (): ReactElement => {

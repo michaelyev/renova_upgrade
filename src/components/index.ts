@@ -1,5 +1,5 @@
 export * from './Blog';
-export * from './ContactForm';
+export * from './ContactFormBig';
 export * from './ContactsMain';
 export * from './Discounts';
 export * from './FAQ';
