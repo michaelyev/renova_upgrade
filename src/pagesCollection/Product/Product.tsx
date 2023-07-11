@@ -4,9 +4,12 @@ import { getData } from '@/helpers/getData';
 import { selectedCardLocalStorage } from '@/helpers/selectedCardLocalStorage';
 import { data } from 'autoprefixer';
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 export const Product = ({ id }) => {
   const [productData, setProductData] = useState([]);
+  const selectedCards = useSelector(state => state.selectedCards.selectedCards)
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,7 +22,6 @@ export const Product = ({ id }) => {
 
   const filteredProduct = productData.find((product) => product?.id === +id);
 
-  const selectedCards = selectedCardLocalStorage()
 
   return (
     <>

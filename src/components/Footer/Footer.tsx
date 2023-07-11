@@ -26,7 +26,7 @@ export const Footer: FC = (): ReactElement => {
           </div>
           <div className="flex flex-col justify-between items-center w-1/3">
             <Link href="/">
-              <Image src="images/Subtract.svg" width={71} height={71} alt="logo" />
+              <Image src="images/logos/Subtract.svg" width={71} height={71} alt="logo" />
             </Link>
           </div>
           <div className="flex flex-col gap-[24px] w-1/3">

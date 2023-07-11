@@ -4,18 +4,16 @@ import Carousel from './Carousel';
 import { FC, ReactElement, useEffect, useState } from 'react';
 import { Button } from '../common';
 import { getData } from '@/helpers/getData';
-import { selectedCardLocalStorage } from '@/helpers/selectedCardLocalStorage';
+import { useSelector } from 'react-redux';
 
 export const Discounts: FC = (): ReactElement => {
   const [discounts, setDiscounts] = useState([]);
-  const [selectedCards, setSelectedCards] = useState<number[]>([])
 
   useEffect(() => {
     const getDiscounts = async () => {
       const data = await getData('/discounts.json');
       setDiscounts(data);
     };
-    setSelectedCards(selectedCardLocalStorage())
     getDiscounts();
   }, []);
 
@@ -30,7 +28,6 @@ export const Discounts: FC = (): ReactElement => {
       <Carousel 
         discounts={discounts} 
         selectedCards={selectedCards} 
-        setSelectedCards={setSelectedCards} 
       />
     </section>
   );

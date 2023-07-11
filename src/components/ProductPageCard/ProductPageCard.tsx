@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import { Button } from '../common';
 import { Reviews } from '../Reviews/Reviews';
+import { SelectedIcon } from '../SelectedIcon/SelectedIcon';
 
 export const ProductPageCard = ({ props, selectedCards }) => {
   if (!props) {
@@ -22,16 +23,9 @@ export const ProductPageCard = ({ props, selectedCards }) => {
     characteristics,
   } = props;
 
-  const handleSelectionClick = () => {
-    if(selectedCards.find(card => card.id === id)) return
-    const newSelectedCards = [...selectedCards, {id, productName, image, price, discountedPrice}]
-    setSelectedCards(newSelectedCards)
-    localStorage.setItem('selectedCard', JSON.stringify(newSelectedCards));
-  };
-
+  
+  
   return (
-
-
     <div>
       <section className="container pt-[108px] pb-[64px]">
         <button className="pb-[48px] p1 text-additional2">Back to Products</button>
@@ -40,8 +34,8 @@ export const ProductPageCard = ({ props, selectedCards }) => {
           <div className="max-w-[538px]">
             <h1 className="pb-[16px] h2">{productName}</h1>
             <p className="pb-[32px]">{productCode}</p>
-            <div  className="w-[538px] h-[480px] relative mb-[64px]">
-              <Image  alt="" src={image} fill />
+            <div className="w-[538px] h-[480px] relative mb-[64px]">
+              <Image alt="" src={image} fill />
             </div>
             <h3 className="mb-[32px] h5">Characteristics</h3>
             <ul className="p1">
@@ -80,7 +74,14 @@ export const ProductPageCard = ({ props, selectedCards }) => {
             </ul>
           </div>
           <div className="pt-[108px]">
-            <Image onClick={handleSelectionClick} alt="" className="pb-[21px]" src="/images/icons/discounts_like.svg" height={33} width={33} />
+            <SelectedIcon
+              id={id}
+              productName={productName}
+              image={image}
+              price={price}
+              discountedPrice={discountedPrice}
+              selectedCards={selectedCards}
+            />
             <div className="flex items-center mb-[16px]">
               <p className=" mr-[8px] h5">Status:</p>
               <p className="p1 ">{status}</p>

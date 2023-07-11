@@ -2,17 +2,20 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 import SwiperCore, { Navigation } from 'swiper';
 import { FC, ReactElement } from 'react';
+import { SelectedIcon } from '../SelectedIcon/SelectedIcon';
+import { DiscountsCard } from './DiscountsCards';
+import { useSelector } from 'react-redux';
 
 SwiperCore.use([Navigation]);
 
-const Carousel: FC = ({ discounts, selectedCards, setSelectedCards }): ReactElement => {
+const Carousel: FC = ({ discounts }): ReactElement => {
 
-  const handleSelectionClick = (discountCard) => {
-    if (selectedCards.find((card) => card.id === discountCard.id)) return;
-    const newSelectedCards = [...selectedCards, discountCard];
-    setSelectedCards(newSelectedCards);
-    localStorage.setItem('selectedCard', JSON.stringify(newSelectedCards));
-  };
+  const selectedCards = useSelector(state => state.selectedCards.selectedCards)
+
+  if (!discounts || !selectedCards) {
+    return <>Loading...</>; // Render a loading state or placeholder
+  }
+  
 
   return (
     <section className="flex items-center">
@@ -29,34 +32,15 @@ const Carousel: FC = ({ discounts, selectedCards, setSelectedCards }): ReactElem
         }}
         className="mySwiper max-w-[1300px]"
       >
+        <div className="">
         {discounts.map((discountCard) => (
           <SwiperSlide key={discountCard.id}>
-            <div className="h-[428px] w-[374px]">
-              <div className="flex justify-center text-main1 text-5xl bg-accent h-[80px] w-[203px] items-center">-20 %</div>
-              <Image src={discountCard?.image} width={374} height={428} />
-              <div className="h-[171px] w-[374px] bg-main1 px-[24px]">
-                <h3 className="font-inter font-normal text-base leading-[1.21] text-left pt-[16px]">
-                  {discountCard.description}
-                </h3>
-                <div className="flex justify-between items-center mt-[28px]">
-                  <h4 className="font-darkGrotesque text-4xl text-main ">{discountCard.price}</h4>
-                  <h4 className="text-additional2">{discountCard?.discountedPrice}</h4>
-                  {selectedCards?.find((card) => card.id === discountCard.id) ? (
-                    'selected'
-                  ) : (
-                    <Image
-                      onClick={() => handleSelectionClick(discountCard)}
-                      alt=""
-                      src="/images/icons/discounts_like.svg"
-                      width={33}
-                      height={33}
-                    />
-                  )}
-                </div>
-              </div>
-            </div>
+            <DiscountsCard discountCard={discountCard} selectedCards={selectedCards} />
           </SwiperSlide>
+          
         ))}
+        </div>
+        
       </Swiper>
       <div className="swiper-button-next absolute right-0">
         <Image alt="Next" src="/images/icons/right_arrow_discount.svg" width={80} height={80} />
