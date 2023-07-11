@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { Button } from '@/components';
 import React from 'react';
 import { ContactForm } from '@/components';
@@ -8,13 +8,15 @@ import { selectedCardLocalStorage } from '@/helpers/selectedCardLocalStorage';
 import { useSelector } from 'react-redux';
 import { fetchData, productData } from '../redux/features/productDataSlice';
 import { ContactFormVertical } from '@/components/ContactFormVertical/ContactFormVertical';
+import { handleSelectionClick } from '@/helpers/selectedClick';
+import { useAppDispatch } from '../redux/hooks';
 
 const page = () => {
-  
-  const selectedCards = selectedCardLocalStorage()
-  //const selectedCards = useSelector(state => state.selectedCard)
-  
-  console.log(selectedCards)
+  const selectedCards = useSelector((state) => state.selectedCards.selectedCards);
+  const products = useSelector(productData);
+  const dispatch = useAppDispatch();
+
+
   return (
     <section className="container pt-[100px]">
       <div>
@@ -24,19 +26,36 @@ const page = () => {
       </div>
       <div className="flex text-center items-center justify-between mt-[24px] mb-[64px] ">
         <div className="max-w-[762px] h6">
+          {selectedCards.length > 0 ?
+          ''
+          :
           <div>
-            <p>
-              You havent liked any product yet. We have a huge selection. Please go to the catalog to select something
-            </p>
-            <div className="flex justify-center mt-[16px]">
-              <Button id="browse" />
-            </div>
+          <p>
+            You havent liked any product yet. We have a huge selection. Please go to the catalog to select something
+          </p>
+          <div className="flex justify-center mt-[16px]">
+            <Button id="browse" />
           </div>
+        </div>
+        }
+          
 
           <div className={`${selectedCards.length ? 'border-additional1 border-2 border-solid' : ''}`}>
             {selectedCards.map((selectedCard) => (
               <div className="flex gap-[24px] p-[48px]  items-center">
-                <div>
+                <div
+                  onClick={() =>
+                    handleSelectionClick(
+                      selectedCard.id,
+                      selectedCards,
+                      selectedCard.productName,
+                      selectedCard.image,
+                      selectedCard.price,
+                      selectedCard.discountedPrice,
+                      dispatch
+                    )
+                  }
+                >
                   <svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M26.6668 15.5V32.1667H13.3335V15.5H26.6668ZM24.1668 5.5H15.8335L14.1668 7.16667H8.3335V10.5H31.6668V7.16667H25.8335L24.1668 5.5ZM30.0002 12.1667H10.0002V32.1667C10.0002 34 11.5002 35.5 13.3335 35.5H26.6668C28.5002 35.5 30.0002 34 30.0002 32.1667V12.1667Z"
