@@ -21,7 +21,7 @@ const page = () => {
     <section className="container pt-[100px]">
       <div>
         <div className="flex h4 justify-between">
-          <p>Selected Products (0)</p>
+          <p>Selected Products (1)</p>
         </div>
       </div>
       <div className="flex text-center items-center justify-between mt-[24px] mb-[64px] ">

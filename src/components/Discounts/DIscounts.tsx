@@ -27,7 +27,6 @@ export const Discounts: FC = (): ReactElement => {
       </div>
       <Carousel 
         discounts={discounts} 
-        selectedCards={selectedCards} 
       />
     </section>
   );
