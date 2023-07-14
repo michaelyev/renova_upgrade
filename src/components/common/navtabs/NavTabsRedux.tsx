@@ -1,15 +1,18 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { setActiveTabCategory, setActiveTabSort } from '@/app/redux/features/navTabsSlice';
 import { navTabsConfig } from '@/constants/navTabsConfig';
+import { FC, ReactElement } from 'react';
+import { RootState } from '@/app/redux/store/store';
+import { NavTabRedux } from '@/interfaces/navTabRedux';
 
-const NavTabsRedux = ({ tabName, style, border }) => {
+const NavTabsRedux: FC<NavTabRedux> = ({ tabName, style, border }): ReactElement => {
   const tabs = navTabsConfig[tabName];
 
-  const activeTabCategory = useSelector((state) => state.navtabcategory.activeTab);
-  const activeTabSort = useSelector((state) => state.navtabsort.activeTab);
+  const activeTabCategory = useSelector((state: RootState) => state.navtabcategory.activeTab);
+  const activeTabSort = useSelector((state: RootState) => state.navtabsort.activeTab);
   const dispatch = useDispatch();
 
-  const handleClick = (id) => {
+  const handleClick = (id: string) => {
     if (tabName === 'productSort') {
       dispatch(setActiveTabSort(id));
     }

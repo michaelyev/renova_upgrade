@@ -1,27 +1,28 @@
 'use client';
+import { RootState } from '@/app/redux/store/store';
 import { ProductPageCard } from '@/components/ProductPageCard/ProductPageCard';
 import { getData } from '@/helpers/getData';
-import { selectedCardLocalStorage } from '@/helpers/selectedCardLocalStorage';
-import { data } from 'autoprefixer';
-import React, { useState, useEffect } from 'react';
+import { IProduct } from '@/interfaces/productsType';
+import React, { useState, useEffect, FC } from 'react';
 import { useSelector } from 'react-redux';
 
-export const Product = ({ id }) => {
-  const [productData, setProductData] = useState([]);
-  const selectedCards = useSelector(state => state.selectedCards.selectedCards)
-
+interface ProductProps {
+  id: string;
+}
+export const Product: FC<ProductProps> = ({ id }) => {
+  const [productData, setProductData] = useState<IProduct[]>([]);
+  const selectedCards = useSelector((state: RootState) => state.selectedCards.selectedCards);
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await getData('/countertops.json');
-      setProductData(data.filter((product) => product?.id === +id));
+      setProductData(data.filter((product: IProduct) => product?.id === +id));
     };
 
     fetchData();
   }, []);
 
   const filteredProduct = productData.find((product) => product?.id === +id);
-
 
   return (
     <>

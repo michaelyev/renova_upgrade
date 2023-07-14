@@ -1,13 +1,12 @@
-'use client'
-import Image from 'next/image';
+'use client';
 import Carousel from './Carousel';
 import { FC, ReactElement, useEffect, useState } from 'react';
 import { Button } from '../common';
 import { getData } from '@/helpers/getData';
-import { useSelector } from 'react-redux';
+import { IProduct } from '@/interfaces/productsType';
 
 export const Discounts: FC = (): ReactElement => {
-  const [discounts, setDiscounts] = useState([]);
+  const [discounts, setDiscounts] = useState<IProduct[]>([]);
 
   useEffect(() => {
     const getDiscounts = async () => {
@@ -25,9 +24,7 @@ export const Discounts: FC = (): ReactElement => {
           <Button type="browse" imageName="right_arrow" />
         </div>
       </div>
-      <Carousel 
-        discounts={discounts} 
-      />
+      <Carousel discounts={discounts} />
     </section>
   );
 };

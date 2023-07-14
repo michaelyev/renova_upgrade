@@ -1,12 +1,11 @@
 'use client';
+import { FC, ReactElement } from 'react';
+import { useSelector } from 'react-redux';
+import { useActions } from '@/hooks/useActions';
 import { ContactForm, Input } from '@/components';
 import { BlogCard } from '@/components/BlogCard/BlogCard';
-import { FC, ReactElement, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { blogData, fetchBlogData } from '@/app/redux/features/blogDataSlice';
-import { useDispatch } from 'react-redux';
-import { getData } from '@/helpers/getData';
-import { useActions } from '@/hooks/useActions';
+import { blogData } from '@/app/redux/features/blogDataSlice';
+import { BlogItem } from '@/interfaces/blogItem';
 
 const Blog: FC = (): ReactElement => {
   const { blog } = useSelector(blogData);
@@ -28,7 +27,7 @@ const Blog: FC = (): ReactElement => {
           eaque deleniti? Voluptas, minus.
         </p>
         <div className="flex flex-wrap gap-[20px] mb-[130px]">
-          {blog.map((blogI) => (
+          {blog.map((blogI: BlogItem) => (
             <BlogCard {...blogI} />
           ))}
         </div>

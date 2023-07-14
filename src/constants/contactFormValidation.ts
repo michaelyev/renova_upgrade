@@ -24,4 +24,5 @@ export const contactFormValidation = {
   phone: {
     required: 'provide your phone',
   },
+  location: {},
 };

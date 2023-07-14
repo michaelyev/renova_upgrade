@@ -11,8 +11,7 @@ const rootReducer = combineReducers({
   navtabcategory: navTabCategoryReducer,
   productData: productDataReducer,
   blogData: blogDataReducer,
-  selectecards : selectedCardReducer
-
+  selectecards: selectedCardReducer,
 });
 
 export default rootReducer;

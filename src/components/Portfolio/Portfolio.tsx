@@ -1,7 +1,7 @@
 'use client';
 import axios from 'axios';
 import NextImage from 'next/image';
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect } from 'react';
 import useSWR from 'swr';
 import { Button } from '../common';
 

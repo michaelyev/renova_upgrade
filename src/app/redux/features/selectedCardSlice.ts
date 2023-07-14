@@ -1,24 +1,23 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { selectedCardLocalStorage } from '@/helpers/selectedCardLocalStorage';
-
+import { ISelectedCard } from '@/interfaces/selectedCard';
 
 type SelectedCardState = {
-  selectedCards: number[];  
+  selectedCards: ISelectedCard[];
 };
 
 const initialState: SelectedCardState = {
-  selectedCards: selectedCardLocalStorage()
+  selectedCards: selectedCardLocalStorage(),
 };
 
-
 const selectedCardSlice = createSlice({
-    name: 'selectedCards',
-    initialState,
-    reducers: {
-        setSelectedCards: (state, action: PayloadAction<any>) => {
-            state.selectedCards = action.payload
-        },
+  name: 'selectedCards',
+  initialState,
+  reducers: {
+    setSelectedCards: (state, action: PayloadAction<any>) => {
+      state.selectedCards = action.payload;
     },
+  },
 });
 
 export const { setSelectedCards } = selectedCardSlice.actions;

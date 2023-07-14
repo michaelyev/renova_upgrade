@@ -1,7 +1,6 @@
 'use client';
 import { FC } from 'react';
-import { useForm, SubmitHandler, Controller } from 'react-hook-form';
-import { Input } from '../common';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import { contactFormValidation } from '@/constants/contactFormValidation';
 
 type Inputs = {
@@ -9,11 +8,10 @@ type Inputs = {
   email: string;
   phone: string;
   location: string;
-  // message: string
 };
 
 interface ContactFormProps {
-  setModalOpen: (isOpen: boolean) => void;
+  setModalOpen?: (isOpen: boolean) => void;
 }
 
 export const ContactForm: FC<ContactFormProps> = ({ setModalOpen }) => {
@@ -27,7 +25,9 @@ export const ContactForm: FC<ContactFormProps> = ({ setModalOpen }) => {
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    setModalOpen(false);
+    if (setModalOpen) {
+      setModalOpen(false);
+    }
     reset();
   };
 

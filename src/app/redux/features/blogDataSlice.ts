@@ -1,13 +1,15 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getData } from '@/helpers/getData';
+import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../store/store';
+import { fetchBlogData } from './asyncActions/fetchBlogData';
+import { BlogItem } from '@/interfaces/blogItem';
 
-export const fetchBlogData = createAsyncThunk<any, void>('blogData/fetchBlogData', async (fileName) => {
-  const blogData = await getData(`/${fileName}.json`);
-  return blogData;
-});
+type BlogState = {
+  blog: BlogItem[];
+  error: string;
+  loading: boolean;
+};
 
-const initialState = {
+const initialState: BlogState = {
   blog: [],
   error: '',
   loading: false,
@@ -27,7 +29,11 @@ const blogDataSlice = createSlice({
         state.loading = true;
       })
       .addCase(fetchBlogData.rejected, (state, action) => {
-        state.error = action.payload;
+        if (typeof action.payload === 'string') {
+          state.error = action.payload;
+        } else {
+          state.error = 'An error occurred';
+        }
         state.loading = false;
       });
   },

@@ -1,14 +1,7 @@
 import React, { FC, ReactElement } from 'react';
 import Image from 'next/image';
 import { buttonConfig } from '@/constants/buttonConfig';
-import { IButtonTypeData } from '@/interfaces/buttonType';
-
-type buttonType = 'feedback' | 'request' | 'browseRight' | 'browseLeft' | 'browse';
-
-interface IButtonType {
-  type: buttonType;
-  imageName?: string;
-}
+import { IButtonType } from '@/interfaces/buttonType';
 
 export const Button: FC<IButtonType> = ({ type, imageName }): ReactElement => {
   const btn = buttonConfig[type];

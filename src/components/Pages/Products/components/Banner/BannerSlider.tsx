@@ -52,10 +52,6 @@ export default function BannerSlider() {
         </SwiperSlide>
         <SwiperSlide></SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
       </Swiper>
     </>
   );

@@ -1,14 +1,20 @@
 import { bindActionCreators } from '@reduxjs/toolkit';
 
-import * as blogData from '@/app/redux/features/blogDataSlice';
-import * as productData from '@/app/redux/features/productDataSlice';
+import * as fetchBlogData from '@/app/redux/features/asyncActions/fetchBlogData';
+import * as fetchProductData from '@/app/redux/features/asyncActions/fetchProductData';
 
 import { useAppDispatch } from '@/app/redux/hooks';
+import { useMemo } from 'react';
 
-type actionsType = typeof blogData | typeof productData 
+type actionsType = typeof fetchBlogData & typeof fetchProductData;
 
 export const useActions = (): actionsType => {
   const dispatch = useAppDispatch();
-
-  return bindActionCreators({ ...blogData, ...productData}, dispatch);
+  return useMemo((): actionsType => {
+    const activeActions: actionsType = {
+      ...fetchBlogData,
+      ...fetchProductData,
+    };
+    return bindActionCreators(activeActions, dispatch);
+  }, [dispatch]);
 };

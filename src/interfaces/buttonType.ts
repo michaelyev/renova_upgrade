@@ -1,8 +1,9 @@
+type buttonType = 'feedback' | 'request' | 'browseRight' | 'browseLeft' | 'browse';
+
 export interface IButtonType {
-  browse: IButtonTypeData;
-  browseRight: IButtonTypeData;
-  browseLeft: IButtonTypeData;
-  feedback: IButtonTypeData;
+  type: buttonType;
+  imageName?: string;
+  id?: string;
 }
 
 export interface IButtonTypeData {

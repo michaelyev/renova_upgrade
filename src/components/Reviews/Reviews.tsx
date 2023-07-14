@@ -1,5 +1,5 @@
 'use client';
-import React, { FC, JSXElementConstructor, ReactElement, ReactNode, useRef, useState } from 'react';
+import React, { FC, ReactElement } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 

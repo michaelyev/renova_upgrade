@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 import { useState } from 'react';
 
 const faq = [
@@ -18,7 +17,7 @@ const faq = [
 ];
 
 export default function SelectionFaq() {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <section className="max-w-[415px] border-additional1 border-solid border-2 text-left px-[32px] mt-[24px] py-[40px] py-[40px">

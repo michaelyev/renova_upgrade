@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { FC, ReactElement } from 'react';
 
-export const BlogCard: FC<{ date: string; readingTime: string; id: string; title: string }> = (props) => {
+export const BlogCard: FC<{ date: string; readingTime: string; id: number; title: string }> = (props): ReactElement => {
   return (
     <div>
       <div className="w-[650px] max-h-[400px] relative">

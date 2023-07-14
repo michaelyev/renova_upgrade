@@ -1,14 +1,17 @@
-'use client'
-import React, { useState } from 'react';
+'use client';
+import React, { FC } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useSelector } from 'react-redux';
 
 import { SelectedIcon } from '@/components/SelectedIcon/SelectedIcon';
+import { IProduct } from '@/interfaces/productsType';
+import { ISelectedCard } from '@/interfaces/selectedCard';
 
-const ProductCard = (props) => {
+interface IProductCard extends IProduct {
+  selectedCards: ISelectedCard[];
+}
 
-
+const ProductCard: FC<IProductCard> = (props) => {
   if (!props) {
     return <>Loading...</>; // Render a loading state or placeholder
   }
@@ -25,9 +28,8 @@ const ProductCard = (props) => {
     price,
     discountedPrice,
     characteristics,
-    selectedCards
+    selectedCards,
   } = props;
- 
 
   return (
     <li>
@@ -48,9 +50,14 @@ const ProductCard = (props) => {
           <div className="flex justify-between items-center mt-[8px]">
             <h4 className="font-darkGrotesque text-4xl text-main ">20$/m2</h4>
             <h4 className="text-additional2">25$/m2</h4>
-              <SelectedIcon id={id} productName={productName} image={image} price={price} discountedPrice={discountedPrice} selectedCards={selectedCards} />
-              
-            
+            <SelectedIcon
+              id={id}
+              productName={productName}
+              image={image}
+              price={price}
+              discountedPrice={discountedPrice}
+              selectedCards={selectedCards}
+            />
           </div>
         </div>
       </div>

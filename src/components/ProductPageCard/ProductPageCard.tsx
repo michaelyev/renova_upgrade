@@ -1,10 +1,17 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { FC } from 'react';
 import { Button } from '../common';
 import { Reviews } from '../Reviews/Reviews';
 import { SelectedIcon } from '../SelectedIcon/SelectedIcon';
+import { IProduct } from '@/interfaces/productsType';
+import { ISelectedCard } from '@/interfaces/selectedCard';
 
-export const ProductPageCard = ({ props, selectedCards }) => {
+interface IProductPageCard {
+  selectedCards: ISelectedCard[];
+  props: IProduct | undefined;
+}
+
+export const ProductPageCard: FC<IProductPageCard> = ({ props, selectedCards }) => {
   if (!props) {
     return <>Loading...</>; // Render a loading state or placeholder
   }
@@ -23,8 +30,6 @@ export const ProductPageCard = ({ props, selectedCards }) => {
     characteristics,
   } = props;
 
-  
-  
   return (
     <div>
       <section className="container pt-[108px] pb-[64px]">
@@ -124,7 +129,7 @@ export const ProductPageCard = ({ props, selectedCards }) => {
         <p className="h5">Reviews</p>
 
         <div className="mt-[40px] mb-[24px]">
-          <Button id="feedback" />
+          <Button id="feedback" type="feedback" />
         </div>
 
         <Reviews card={<div className="h-[240px] w-[427px] bg-gray-500"></div>} />

@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { FC, ReactElement, useState } from 'react';
 import { NavTabsState } from '../common/navtabs/NavTabs';
 import { brandLogos } from '@/constants/manufacturers';
-import { BrandLogos } from '@/interfaces/manufacturers';
 import { BrandLogosType } from '@/interfaces/brandLogosType';
 
 export const Manufacturers: FC = (): ReactElement => {

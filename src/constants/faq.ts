@@ -1,5 +1,3 @@
-import { IFaq } from '@/interfaces/faq';
-
 export const faq = [
   {
     question: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',

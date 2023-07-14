@@ -12,7 +12,7 @@ export const store = configureStore({
     navtabsort: navTabSortReducer,
     productData: productDataReducer,
     blogData: blogDataReducer,
-    selectedCards: selectedCardReducer
+    selectedCards: selectedCardReducer,
   },
 });
 

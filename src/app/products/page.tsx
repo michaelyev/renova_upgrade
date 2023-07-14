@@ -8,20 +8,19 @@ import ProductSearch from '@/components/ProductSearch/ProductSearch';
 
 import { NavTabsRedux } from '@/components/common/navtabs/NavTabsRedux';
 import { ContactForm } from '@/components';
-import { getData } from '@/helpers/getData';
-import { useSelector, useDispatch } from 'react-redux';
-import { productData, fetchData } from '@/app/redux/features/productDataSlice';
+import { useSelector } from 'react-redux';
 import { useActions } from '@/hooks/useActions';
+import { RootState } from '../redux/store/store';
 
 const Products = () => {
-  const activeTab = useSelector((state) => state.navtabcategory.activeTab);
+  const activeTab = useSelector((state: RootState) => state.navtabcategory.activeTab);
 
   const { fetchData } = useActions();
 
   useEffect(() => {
     fetchData(activeTab);
   }, [fetchData, activeTab]);
-  
+
   return (
     <main>
       <Banner />

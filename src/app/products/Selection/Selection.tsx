@@ -1,11 +1,6 @@
 'use client';
-import React, { useState } from 'react';
-import Checkbox from '@mui/material/Checkbox';
 
-import { CheckBox } from '@mui/icons-material';
-import { FormControlLabel } from '@mui/material';
 import Checkboxes from './Checkboxes/Checkboxes';
-import SelectionFaq from './SelectionFaq/SelectionFaq';
 import { Input } from '@/components';
 
 const Selection = () => {
@@ -30,16 +25,3 @@ const Selection = () => {
 };
 
 export default Selection;
-
-{
-  /* <label className="relative">
-        {label}
-      <input
-        className={input.styles}
-        type={input.type}
-        placeholder={placeholder}
-      />
-      {input.button}
-      
-    </label> */
-}

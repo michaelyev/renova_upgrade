@@ -1,9 +1,8 @@
 'use client';
-import { blogData, fetchBlogData } from '@/app/redux/features/blogDataSlice';
+import { blogData } from '@/app/redux/features/blogDataSlice';
 import { useActions } from '@/hooks/useActions';
 import Image from 'next/image';
 import React, { FC, ReactElement, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
 export const Blog: FC = (): ReactElement => {
@@ -11,10 +10,8 @@ export const Blog: FC = (): ReactElement => {
   const { fetchBlogData } = useActions();
 
   useEffect(() => {
-    fetchBlogData();
+    fetchBlogData('blogData');
   }, []);
-
-  console.log(blog.length);
 
   return (
     <section>
@@ -45,8 +42,8 @@ export const Blog: FC = (): ReactElement => {
                   <span className="flex items-center">
                     <Image alt="" src="/images/icons/ic_outline-remove-red-eye.svg" width={24} height={24} />{' '}
                     <h3 className="ml-2">311</h3>
-                  </span>{' '}
-                  <h3 className="">{blog.title}</h3>
+                  </span>
+                  <h3 className="">5 min. for reading</h3>
                 </span>
               </span>
               <h3 className="font-inter font-bold text-xl leading-[1.2104] pb-[40px]">

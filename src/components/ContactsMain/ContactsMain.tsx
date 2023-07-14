@@ -1,16 +1,9 @@
-'use client'
+'use client';
 import React, { FC, ReactElement } from 'react';
-import { quoteForm } from '@/mockData/mainPageContacts';
 import { contactInfo } from '@/mockData/ourContacts';
-import { Input } from '../common';
-import { contactFormValidation } from '@/constants/contactFormValidation';
-import { useForm } from 'react-hook-form';
 import { ContactFormVertical } from '../ContactFormVertical/ContactFormVertical';
 
-
-
 export const ContactsMain: FC = (): ReactElement => {
-  
   return (
     <section>
       <div className="container my-[128px]">
@@ -24,8 +17,7 @@ export const ContactsMain: FC = (): ReactElement => {
 
         <div className="flex mb-[128px] justify-between">
           <ContactFormVertical />
-        
-          
+
           <div>
             <h3 className="font-inter font-bold text-xl leading-[1.2104] pb-[24px]">{contactInfo.title}</h3>
             <h3 className="mb-[40px]">{contactInfo.phoneNumber}</h3>

@@ -1,15 +1,10 @@
-// counterSlice.js
-import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../store/store';
-import { getData } from '@/helpers/getData';
-
-export const fetchData = createAsyncThunk<any, void>('productData/fetchData', async (activeTab) => {
-  const productData = await getData(`/${activeTab}.json`);
-  return productData;
-});
+import { fetchData } from './asyncActions/fetchProductData';
+import { IProduct } from '@/interfaces/productsType';
 
 const initialState = {
-  products: [],
+  products: [] as IProduct[],
   error: '',
   loading: false,
 };
@@ -28,7 +23,7 @@ const productDataSlice = createSlice({
         state.loading = true;
       })
       .addCase(fetchData.rejected, (state, action) => {
-        state.error = action.payload;
+        state.error = action.payload as string;
         state.loading = false;
       });
   },

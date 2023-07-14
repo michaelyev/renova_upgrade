@@ -1,21 +1,19 @@
 'use client';
 import { Button } from '@/components';
-import React from 'react';
-import { ContactForm } from '@/components';
 import { Reviews } from '@/components/Reviews/Reviews';
 import Image from 'next/image';
-import { selectedCardLocalStorage } from '@/helpers/selectedCardLocalStorage';
 import { useSelector } from 'react-redux';
-import { fetchData, productData } from '../redux/features/productDataSlice';
+import { productData } from '../redux/features/productDataSlice';
 import { ContactFormVertical } from '@/components/ContactFormVertical/ContactFormVertical';
 import { handleSelectionClick } from '@/helpers/selectedClick';
 import { useAppDispatch } from '../redux/hooks';
+import { RootState } from '../redux/store/store';
+import { FC, ReactElement } from 'react';
 
-const page = () => {
-  const selectedCards = useSelector((state) => state.selectedCards.selectedCards);
+const page: FC = (): ReactElement => {
+  const selectedCards = useSelector((state: RootState) => state.selectedCards.selectedCards);
   const products = useSelector(productData);
   const dispatch = useAppDispatch();
-
 
   return (
     <section className="container pt-[100px]">
@@ -26,19 +24,18 @@ const page = () => {
       </div>
       <div className="flex text-center items-center justify-between mt-[24px] mb-[64px] ">
         <div className="max-w-[762px] h6">
-          {selectedCards.length > 0 ?
-          ''
-          :
-          <div>
-          <p>
-            You havent liked any product yet. We have a huge selection. Please go to the catalog to select something
-          </p>
-          <div className="flex justify-center mt-[16px]">
-            <Button id="browse" />
-          </div>
-        </div>
-        }
-          
+          {selectedCards.length > 0 ? (
+            ''
+          ) : (
+            <div>
+              <p>
+                You havent liked any product yet. We have a huge selection. Please go to the catalog to select something
+              </p>
+              <div className="flex justify-center mt-[16px]">
+                <Button id="browse" type="browse" />
+              </div>
+            </div>
+          )}
 
           <div className={`${selectedCards.length ? 'border-additional1 border-2 border-solid' : ''}`}>
             {selectedCards.map((selectedCard) => (
@@ -52,6 +49,7 @@ const page = () => {
                       selectedCard.image,
                       selectedCard.price,
                       selectedCard.discountedPrice,
+
                       dispatch
                     )
                   }
@@ -64,7 +62,7 @@ const page = () => {
                   </svg>
                 </div>
                 <div>
-                  <Image src={selectedCard.image} width={203} height={203} />
+                  <Image alt="" src={selectedCard.image} width={203} height={203} />
                 </div>
                 <div>
                   <p className="p3 pb-[16px]">{selectedCard.productName}</p>

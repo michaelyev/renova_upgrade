@@ -1,25 +1,17 @@
-import React, { useState } from 'react';
 import { ArrowDown, checkboxesConfigCountertops } from './checkboxesConfig';
 import { StyledCheckbox } from '@/components/common/styledCheckbox/StyledCheckbox';
 
 //redux toolkit
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleIndex } from '../../../redux/features/checkBoxSlice';
+import { RootState } from '@/app/redux/store/store';
 
 const Checkboxes = () => {
-  //cconst [expandedIndexes, setExpandedIndexes] = useState([0]);
-
-  const expandedIndexes = useSelector((state) => state.checkbox.expandedIndexes);
+  const expandedIndexes = useSelector((state: RootState) => state.checkbox.expandedIndexes);
   const dispatch = useDispatch();
 
-  const handleToggle = (index) => {
+  const handleToggle = (index: number) => {
     dispatch(toggleIndex(index));
-
-    /* if (expandedIndexes.includes(index)) {
-      setExpandedIndexes(expandedIndexes.filter((item) => item !== index));
-    } else {
-      setExpandedIndexes([...expandedIndexes, index]);
-    } */
   };
 
   return (
