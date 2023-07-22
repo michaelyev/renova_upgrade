@@ -35,8 +35,8 @@ const ProductCard: FC<IProductCard> = (props) => {
     <li>
       <div>
         <div className=" h-[280px] w-[280px]  ">
-          <Image alt="" src={props.image} width={280} height={280} />
-          <div className=" flex justify-center text-main1 text-5xl bg-accent h-[80px] w-[203px] items-center">
+{/*           <Image alt="" src={props.image} width={280} height={280} />
+ */}          <div className=" flex justify-center text-main1 text-5xl bg-accent h-[80px] w-[203px] items-center">
             {/* {selected ? ( */}
             <strong>-20 %</strong>
             {/* ) : null} */}
