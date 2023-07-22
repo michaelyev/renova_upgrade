@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface ArrowDownProps {
-  onClick: () => void; // функция, которая не принимает аргументов и ничего не возвращает
+  onClick(): void;
 }
 
 export const ArrowDown = ({ onClick }: ArrowDownProps) => (

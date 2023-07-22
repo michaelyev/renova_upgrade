@@ -20,7 +20,7 @@ export const Product: FC<ProductProps> = ({ id }) => {
     };
 
     fetchData();
-  }, []);
+  }, [id]);
 
   const filteredProduct = productData.find((product) => product?.id === +id);
 
@@ -31,5 +31,3 @@ export const Product: FC<ProductProps> = ({ id }) => {
   );
 };
 
-//скинуть массив и ко мне в пропсах приходит productName "Carrara_Marble_Countertop" и сделай _
-// и в productData мне найти мой объект чтобы он равен productName

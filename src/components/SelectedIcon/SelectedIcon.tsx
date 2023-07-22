@@ -28,7 +28,7 @@ export const SelectedIcon: FC<ISelectedIconProps> = ({
         onClick={() => handleSelectionClick(id, selectedCards, productName, image, price, discountedPrice, dispatch)}
         alt=""
         src={
-          !!selectedCards?.find((card) => card.id === Number(id))
+          selectedCards?.find((card) => card.id === Number(id))
             ? '/images/icons/discounts_like.svg'
             : '/images/icons/right_arrow.svg'
         }

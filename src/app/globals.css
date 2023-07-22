@@ -5,7 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-
 html,
 body,
 div,
@@ -87,21 +86,21 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font: inherit;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 input,
 button {
-    -webkit-appearance: none;
-    outline: 0;
+  -webkit-appearance: none;
+  outline: 0;
 }
 
 article,
@@ -115,95 +114,92 @@ hgroup,
 menu,
 nav,
 section {
-    display: block;
+  display: block;
 }
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
 video {
-    outline: none;
-    border: none;
+  outline: none;
+  border: none;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 html {
-    height: 100%;
+  height: 100%;
 }
-
-
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-    quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-    content: '';
+  content: '';
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-body{
+body {
   box-sizing: border-box;
   font-family: 'Inter', sans-serif !important;
 }
 
-.container{
+.container {
   margin: 0 auto;
   max-width: 1320px;
 }
 
 /* FontStyles */
 
-.h2{
-    @apply font-darkGrotesque font-bold text-4xl ;
+.h2 {
+  @apply font-darkGrotesque font-bold text-4xl;
 }
 
-.h3{
-    @apply font-darkGrotesque text-4xl font-bold; 
+.h3 {
+  @apply font-darkGrotesque text-4xl font-bold;
 }
 
-.h4{
-    @apply font-inter text-40 font-700;
+.h4 {
+  @apply font-inter text-40 font-700;
 }
 
-.h5{
-    @apply font-inter text-24 font-700;
+.h5 {
+  @apply font-inter text-24 font-700;
 }
 
 .h6 {
-    @apply font-inter text-24 font-500;
-  }
+  @apply font-inter text-24 font-500;
+}
 
-  .p1 {
-    @apply font-inter text-24 font-normal leading-[29px];
-  }
+.p1 {
+  @apply font-inter text-24 font-normal leading-[29px];
+}
 
-  .p2{
-    @apply font-inter text-20 font-normal;
-  }
+.p2 {
+  @apply font-inter text-20 font-normal;
+}
 
-  .p3 {
-    @apply font-inter text-16 font-normal; 
-  }
+.p3 {
+  @apply font-inter text-16 font-normal;
+}
 
-  .productPagePrice {
-        @apply font-inter text-40 font-700; 
-  }
-  
+.productPagePrice {
+  @apply font-inter text-40 font-700;
+}

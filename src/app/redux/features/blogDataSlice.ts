@@ -25,7 +25,7 @@ const blogDataSlice = createSlice({
         state.blog = action.payload;
         state.loading = false;
       })
-      .addCase(fetchBlogData.pending, (state, action) => {
+      .addCase(fetchBlogData.pending, (state) => {
         state.loading = true;
       })
       .addCase(fetchBlogData.rejected, (state, action) => {

@@ -24,7 +24,7 @@ const Products = () => {
   return (
     <main>
       <Banner />
-      <NavTabsRedux tabName={'products'} />
+      <NavTabsRedux tabName="products" />
       <div className="container flex gap-[20px] ">
         <div>
           <Selection />

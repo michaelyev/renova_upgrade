@@ -1,16 +1,15 @@
-import { ArrowDown, checkboxesConfigCountertops } from './checkboxesConfig';
-import { StyledCheckbox } from '@/components/common/styledCheckbox/StyledCheckbox';
-
-//redux toolkit
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleIndex } from '../../../redux/features/checkBoxSlice';
-import { RootState } from '@/app/redux/store/store';
+import { toggleIndex } from '@/app/redux/features/checkBoxSlice';
+import type { RootState } from '@/app/redux/store/store';
+import { StyledCheckbox } from '@/components/common/styledCheckbox/StyledCheckbox';
+import { ArrowDown, checkboxesConfigCountertops } from './checkboxesConfig';
+import type { ReactElement } from 'react';
 
-const Checkboxes = () => {
+const Checkboxes = (): ReactElement => {
   const expandedIndexes = useSelector((state: RootState) => state.checkbox.expandedIndexes);
   const dispatch = useDispatch();
 
-  const handleToggle = (index: number) => {
+  const handleToggle = (index: number): void => {
     dispatch(toggleIndex(index));
   };
 
@@ -25,17 +24,19 @@ const Checkboxes = () => {
 
           {expandedIndexes.includes(index) && (
             <div className="flex flex-col ">
-              {config.checkboxes.map((checkbox) => (
-                <div className="flex items-center" key={checkbox.label}>
-                  <StyledCheckbox />
-                  <label htmlFor={`checkbox-${checkbox.label}`} className="ml-2 text-gray-700">
-                    {checkbox.label}
-                  </label>
-                </div>
-              ))}
+              {config.checkboxes.map(
+                (checkbox): ReactElement => (
+                  <div className="flex items-center" key={checkbox.label}>
+                    <StyledCheckbox />
+                    <label htmlFor={`checkbox-${checkbox.label}`} className="ml-2 text-gray-700">
+                      {checkbox.label}
+                    </label>
+                  </div>
+                )
+              )}
               <div className="flex items-center mt-[18px]">
                 <h3 className="mr-[13px]">See more</h3>
-                <ArrowDown onClick={() => handleToggle(index)} />
+                <ArrowDown onClick={(): void => handleToggle(index)} />
               </div>
             </div>
           )}

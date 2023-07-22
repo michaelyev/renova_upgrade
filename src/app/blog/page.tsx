@@ -1,11 +1,12 @@
 'use client';
-import { FC, ReactElement } from 'react';
+
+import type { FC, ReactElement } from 'react';
 import { useSelector } from 'react-redux';
 import { useActions } from '@/hooks/useActions';
 import { ContactForm, Input } from '@/components';
 import { BlogCard } from '@/components/BlogCard/BlogCard';
 import { blogData } from '@/app/redux/features/blogDataSlice';
-import { BlogItem } from '@/interfaces/blogItem';
+import { type BlogItem } from '@/interfaces/blogItem';
 
 const Blog: FC = (): ReactElement => {
   const { blog } = useSelector(blogData);

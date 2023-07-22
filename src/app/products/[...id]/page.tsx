@@ -1,5 +1,3 @@
-import ProductCard from '@/components/Pages/Products/components/ProductCard/ProductCard';
-import { Reviews } from '@/components/Reviews/Reviews';
 import { Product } from '@/pagesCollection/Product/Product';
 
 const ProductPage = ({ params: { id } }: { params: { id: string } }) => {

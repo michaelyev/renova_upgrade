@@ -85,7 +85,8 @@
       { "blankLine": "always", "prev": "*", "next": "return" },
       { "blankLine": "always", "prev": "*", "next": "if" },
       { "blankLine": "always", "prev": "*", "next": "try" }
-    ]
+    ],
+    "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["state"] }]
   },
   "settings": {
     "import/resolver": {
