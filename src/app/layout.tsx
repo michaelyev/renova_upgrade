@@ -1,9 +1,11 @@
-import type { PropsWithChildren, ReactElement } from 'react';
-import { Header } from '@/components/Header/Header';
-import './globals.css';
 import { Inter } from 'next/font/google';
+import type { PropsWithChildren, ReactElement } from 'react';
+
+import { Providers } from '@/app/redux/provider';
 import { Footer } from '@/components/Footer/Footer';
-import { Providers } from './redux/provider';
+import { Header } from '@/components/Header/Header';
+
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 

@@ -1,7 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../store/store';
-import { fetchBlogData } from './asyncActions/fetchBlogData';
-import { BlogItem } from '@/interfaces/blogItem';
+import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
+
+import { fetchBlogData } from '@/app/redux/features/asyncActions/fetchBlogData';
+import type { RootState } from '@/app/redux/store/store';
+import type { BlogItem } from '@/interfaces/blogItem';
 
 type BlogState = {
   blog: BlogItem[];
@@ -21,7 +22,7 @@ const blogDataSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchBlogData.fulfilled, (state, action) => {
+      .addCase(fetchBlogData.fulfilled, (state, action: PayloadAction<BlogItem[]>) => {
         state.blog = action.payload;
         state.loading = false;
       })
@@ -39,6 +40,6 @@ const blogDataSlice = createSlice({
   },
 });
 
-export const blogData = (state: RootState) => state.blogData;
+export const blogData = (state: RootState): BlogState => state.blogData;
 
 export default blogDataSlice.reducer;

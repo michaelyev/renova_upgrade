@@ -1,9 +1,13 @@
-import { getData } from '@/helpers/getData';
-import { IProduct } from '@/interfaces/productsType';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-export const fetchData = createAsyncThunk<IProduct[], string>('productData/fetchData', async (activeTab) => {
-  const productData = await getData(`http://localhost:5000/${activeTab}`);
-  return productData;
-  
-});
+import { getData } from '@/helpers/getData';
+import type { IProduct } from '@/interfaces/productsType';
+
+export const fetchData = createAsyncThunk<IProduct[], string>(
+  'productData/fetchData',
+  async (activeTab: string): Promise<IProduct[]> => {
+    const productData = await getData(`http://localhost:5000/${activeTab}`);
+
+    return productData;
+  }
+);

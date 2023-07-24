@@ -1,6 +1,6 @@
 'use client';
 
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 interface CheckBoxState {
   expandedIndexes: number[];
@@ -14,11 +14,11 @@ const checkBoxSlice = createSlice({
   name: 'checkbox',
   initialState,
   reducers: {
-    setExpandedIndexes: (state, action: PayloadAction<number[]>) => {
+    setExpandedIndexes: (state, action: PayloadAction<number[]>): void => {
       state.expandedIndexes = action.payload;
     },
 
-    toggleIndex: (state, action: PayloadAction<number>) => {
+    toggleIndex: (state, action: PayloadAction<number>): void => {
       if (state.expandedIndexes.includes(action.payload)) {
         state.expandedIndexes = state.expandedIndexes.filter((item) => item !== action.payload);
       } else {

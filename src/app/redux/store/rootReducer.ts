@@ -1,9 +1,11 @@
+// objects
 import { combineReducers } from '@reduxjs/toolkit';
-import checkBoxReducer from '../features/checkBoxSlice';
-import { navTabCategoryReducer, navTabSortReducer } from '../features/navTabsSlice';
-import productDataReducer from '../features/productDataSlice'; // objects
-import blogDataReducer from '../features/blogDataSlice';
-import selectedCardReducer from '../features/selectedCardSlice';
+
+import blogDataReducer from '@/app/redux/features/blogDataSlice';
+import checkBoxReducer from '@/app/redux/features/checkBoxSlice';
+import { navTabCategoryReducer, navTabSortReducer } from '@/app/redux/features/navTabsSlice';
+import productDataReducer from '@/app/redux/features/productDataSlice';
+import selectedCardReducer from '@/app/redux/features/selectedCardSlice';
 
 const rootReducer = combineReducers({
   checkbox: checkBoxReducer,

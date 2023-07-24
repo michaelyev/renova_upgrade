@@ -1,10 +1,11 @@
 import Image from 'next/image';
-import React, { FC } from 'react';
-import { Button } from '../common';
-import { Reviews } from '../Reviews/Reviews';
-import { SelectedIcon } from '../SelectedIcon/SelectedIcon';
-import { IProduct } from '@/interfaces/productsType';
-import { ISelectedCard } from '@/interfaces/selectedCard';
+import type { FC } from 'react';
+
+import { Reviews } from '@/components/Reviews/Reviews';
+import { SelectedIcon } from '@/components/SelectedIcon/SelectedIcon';
+import { Button } from '@/components/common';
+import type { IProduct } from '@/interfaces/productsType';
+import type { ISelectedCard } from '@/interfaces/selectedCard';
 
 interface IProductPageCard {
   selectedCards: ISelectedCard[];
@@ -16,19 +17,7 @@ export const ProductPageCard: FC<IProductPageCard> = ({ props, selectedCards }) 
     return <>Loading...</>; // Render a loading state or placeholder
   }
 
-  const {
-    id,
-    productName,
-    title,
-    productCode,
-    image,
-    status,
-    description,
-    rating,
-    price,
-    discountedPrice,
-    characteristics,
-  } = props;
+  const { id, productName, productCode, image, status, description, price, discountedPrice, characteristics } = props;
 
   return (
     <div>
@@ -132,7 +121,7 @@ export const ProductPageCard: FC<IProductPageCard> = ({ props, selectedCards }) 
           <Button id="feedback" type="feedback" />
         </div>
 
-        <Reviews card={<div className="h-[240px] w-[427px] bg-gray-500"></div>} />
+        <Reviews card={<div className="h-[240px] w-[427px] bg-gray-500" />} />
       </section>
     </div>
   );

@@ -1,12 +1,14 @@
-'use client';
+import type { FC, ReactElement } from 'react';
 import { useSelector } from 'react-redux';
+
 import { blogData } from '@/app/redux/features/blogDataSlice';
 import { useActions } from '@/hooks/useActions';
-import { FC, ReactElement } from 'react';
+import type { BlogItem } from '@/interfaces/blogItem';
 
 interface BlogArticlePageProps {
   blogId: number;
 }
+
 export const BlogArticlePage: FC<BlogArticlePageProps> = ({ blogId }): ReactElement => {
   const { blog, loading } = useSelector(blogData);
   const { fetchBlogData } = useActions();

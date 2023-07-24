@@ -1,10 +1,12 @@
 'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC, ReactElement, useState } from 'react';
-import { NavTabsState } from '../common/navtabs/NavTabs';
+import { type FC, type ReactElement, useState } from 'react';
+
+import { NavTabsState } from '@/components/common/navtabs/NavTabs';
 import { brandLogos } from '@/constants/manufacturers';
-import { BrandLogosType } from '@/interfaces/brandLogosType';
+import type { BrandLogosType } from '@/interfaces/brandLogosType';
 
 export const Manufacturers: FC = (): ReactElement => {
   const [activeTrade, setActiveTrade] = useState<BrandLogosType>('countertops');
@@ -20,7 +22,7 @@ export const Manufacturers: FC = (): ReactElement => {
           </p>
         </div>
 
-        <NavTabsState tabName={'manufacturers'} onTabChange={setActiveTrade} />
+        <NavTabsState tabName="manufacturers" onTabChange={setActiveTrade} />
 
         <div className="flex max-w-[1096px] mx-auto items-center justify-around flex-wrap mt-[57px]">
           {brandLogos[activeTrade].map((brand, index) => (

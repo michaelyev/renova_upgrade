@@ -1,5 +1,6 @@
-import { IInputType } from '@/interfaces/inputConfig';
 import DoneIcon from '@mui/icons-material/Done';
+
+import type { IInputType } from '@/interfaces/inputConfig';
 
 export const inputConfig: IInputType = {
   footer: {

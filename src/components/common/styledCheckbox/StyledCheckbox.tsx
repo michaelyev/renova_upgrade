@@ -1,6 +1,7 @@
 'use client';
-import React, { FC, ReactElement, useState } from 'react';
-import CheckIcon from './CheckIcon';
+import { type FC, type ReactElement, useState } from 'react';
+
+import { CheckIcon } from './CheckIcon';
 
 export const StyledCheckbox: FC = (): ReactElement => {
   const [isChecked, setIsChecked] = useState(true);
@@ -11,8 +12,13 @@ export const StyledCheckbox: FC = (): ReactElement => {
 
   return (
     <div className="inline-flex items-center">
-      <label className="relative flex cursor-pointer items-center rounded-full p-3" data-ripple-dark="true">
+      <label
+        htmlFor="styled-checkbox"
+        className="relative flex cursor-pointer items-center rounded-full p-3"
+        data-ripple-dark="true"
+      >
         <input
+          id="styled-checkbox"
           type="checkbox"
           className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none  border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-accent checked:bg-additional1 checked:before:bg-pink-500 hover:before:opacity-10"
           checked={isChecked}

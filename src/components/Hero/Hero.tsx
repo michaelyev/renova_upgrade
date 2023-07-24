@@ -1,18 +1,19 @@
 'use client';
+
 import Image from 'next/image';
-import { FC, ReactElement } from 'react';
-import { ContactForm } from '../ContactFormBig';
-import { useState } from 'react';
+import { type FC, type ReactElement, useState } from 'react';
+
+import { ContactForm } from '@/components/ContactFormBig';
 
 export const Hero: FC = (): ReactElement => {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   return (
     <section className="bg-heroImage bg-cover pt-[50px] h-screen">
       <div className="container relative ">
         <div
           className={`${
-            modalOpen ? '' : 'hidden'
+            isModalOpen ? '' : 'hidden'
           } absolute w-screen bg-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
         >
           <ContactForm setModalOpen={setModalOpen} />

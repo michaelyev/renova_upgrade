@@ -1,4 +1,4 @@
-import { BrandLogos } from '@/interfaces/manufacturers';
+import type { BrandLogos } from '@/interfaces/manufacturers';
 
 export const brandLogos: BrandLogos = {
   countertops: [

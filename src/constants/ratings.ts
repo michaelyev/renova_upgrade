@@ -1,4 +1,4 @@
-import { IRatings } from '@/interfaces/ratings';
+import type { IRatings } from '@/interfaces/ratings';
 
 export const ratings: IRatings[] = [
   {

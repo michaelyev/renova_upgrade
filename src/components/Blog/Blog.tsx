@@ -1,17 +1,16 @@
 'use client';
-import { blogData } from '@/app/redux/features/blogDataSlice';
-import { useActions } from '@/hooks/useActions';
+
 import Image from 'next/image';
-import React, { FC, ReactElement, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { type FC, type ReactElement, useEffect } from 'react';
+
+import { useActions } from '@/hooks/useActions';
 
 export const Blog: FC = (): ReactElement => {
-  const { blog } = useSelector(blogData);
   const { fetchBlogData } = useActions();
 
-  useEffect(() => {
+  useEffect((): void => {
     fetchBlogData('blogData');
-  }, []);
+  }, [fetchBlogData]);
 
   return (
     <section>

@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../store/store';
-import { fetchData } from './asyncActions/fetchProductData';
-import { IProduct } from '@/interfaces/productsType';
+
+import { fetchData } from '@/app/redux/features/asyncActions/fetchProductData';
+import type { RootState } from '@/app/redux/store/store';
+import type { IProduct } from '@/interfaces/productsType';
 
 const initialState = {
   products: [] as IProduct[],
@@ -19,7 +20,7 @@ const productDataSlice = createSlice({
         state.products = action.payload;
         state.loading = false;
       })
-      .addCase(fetchData.pending, (state, action) => {
+      .addCase(fetchData.pending, (state) => {
         state.loading = true;
       })
       .addCase(fetchData.rejected, (state, action) => {

@@ -1,23 +1,24 @@
 'use client';
-import React, { useEffect } from 'react';
-import Banner from '../../components/Pages/Products/components/Banner/Banner';
-import Selection from './Selection/Selection';
-import ProductList from '@/components/Pages/Products/components/ProductList/ProductList';
-import SelectionFaq from './Selection/SelectionFaq/SelectionFaq';
-import ProductSearch from '@/components/ProductSearch/ProductSearch';
 
-import { NavTabsRedux } from '@/components/common/navtabs/NavTabsRedux';
-import { ContactForm } from '@/components';
+import React, { type ReactElement, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useActions } from '@/hooks/useActions';
-import { RootState } from '../redux/store/store';
 
-const Products = () => {
-  const activeTab = useSelector((state: RootState) => state.navtabcategory.activeTab);
+import Selection from '@/app/products/Selection/Selection';
+import SelectionFaq from '@/app/products/Selection/SelectionFaq/SelectionFaq';
+import type { RootState } from '@/app/redux/store/store';
+import { ContactForm } from '@/components';
+import Banner from '@/components/Pages/Products/components/Banner/Banner';
+import ProductList from '@/components/Pages/Products/components/ProductList/ProductList';
+import ProductSearch from '@/components/ProductSearch/ProductSearch';
+import { NavTabsRedux } from '@/components/common/navtabs/NavTabsRedux';
+import { useActions } from '@/hooks/useActions';
+
+const Products = (): ReactElement => {
+  const activeTab = useSelector((state: RootState): string => state.navtabcategory.activeTab);
 
   const { fetchData } = useActions();
 
-  useEffect(() => {
+  useEffect((): void => {
     fetchData(activeTab);
   }, [fetchData, activeTab]);
 

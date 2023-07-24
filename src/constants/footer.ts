@@ -1,4 +1,4 @@
-import { IFooterSocialIcons } from '@/interfaces/footerSocialIcons';
+import type { IFooterSocialIcons } from '@/interfaces/footerSocialIcons';
 
 export const socialIcons: IFooterSocialIcons[] = [
   {

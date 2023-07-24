@@ -1,11 +1,12 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
-import SwiperCore, { Navigation } from 'swiper';
-import { FC, ReactElement } from 'react';
-import { DiscountsCard } from './DiscountsCards';
+import type { FC, ReactElement } from 'react';
 import { useSelector } from 'react-redux';
-import { IProduct } from '@/interfaces/productsType';
-import { RootState } from '@/app/redux/store/store';
+import SwiperCore, { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import type { RootState } from '@/app/redux/store/store';
+import { DiscountsCard } from '@/components/Discounts/DiscountsCards';
+import type { IProduct } from '@/interfaces/productsType';
 
 SwiperCore.use([Navigation]);
 
@@ -13,7 +14,7 @@ interface CarouselProps {
   discounts: IProduct[];
 }
 
-const Carousel: FC<CarouselProps> = ({ discounts }): ReactElement => {
+export const Carousel: FC<CarouselProps> = ({ discounts }): ReactElement => {
   const selectedCards = useSelector((state: RootState) => state.selectedCards.selectedCards);
 
   if (!discounts || !selectedCards) {
@@ -49,5 +50,3 @@ const Carousel: FC<CarouselProps> = ({ discounts }): ReactElement => {
     </section>
   );
 };
-
-export default Carousel;

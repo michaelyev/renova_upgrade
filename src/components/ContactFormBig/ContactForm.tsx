@@ -1,6 +1,8 @@
 'use client';
-import { FC } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
+
+import type { FC, ReactElement } from 'react';
+import { type SubmitHandler, useForm } from 'react-hook-form';
+
 import { contactFormValidation } from '@/constants/contactFormValidation';
 
 type Inputs = {
@@ -11,20 +13,19 @@ type Inputs = {
 };
 
 interface ContactFormProps {
-  setModalOpen?: (isOpen: boolean) => void;
+  setModalOpen?(isOpen: boolean): void;
 }
 
-export const ContactForm: FC<ContactFormProps> = ({ setModalOpen }) => {
+export const ContactForm: FC<ContactFormProps> = ({ setModalOpen }): ReactElement => {
   const {
     register,
-    control,
     handleSubmit,
     reset,
 
     formState: { errors },
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+  const onSubmit: SubmitHandler<Inputs> = (): void => {
     if (setModalOpen) {
       setModalOpen(false);
     }

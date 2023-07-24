@@ -1,9 +1,11 @@
 'use client';
+
 import axios from 'axios';
 import NextImage from 'next/image';
-import { FC, useEffect } from 'react';
+import { type FC, useEffect, useState } from 'react';
 import useSWR from 'swr';
-import { Button } from '../common';
+
+import { Button } from '@/components/common';
 
 interface ImageData {
   width: number;
@@ -25,17 +27,27 @@ const fetchImages = async (url: string): Promise<ImageData[]> => {
 
 export const Portfolio: FC = () => {
   const { data } = useSWR<ImageData[]>('https://dog.ceo/api/breed/husky/images', fetchImages);
+  const [imageData, setImageData] = useState<ImageData[]>([]);
 
   useEffect(() => {
     if (data) {
-      data.forEach((imgProps: ImageData) => {
+      const updatedImageData = data.map((imgProps: ImageData) => {
         const img = new Image();
         img.src = imgProps.src;
         img.onload = () => {
-          imgProps.width = img.naturalWidth;
-          imgProps.height = img.naturalHeight;
+          const updatedImgProps: ImageData = {
+            ...imgProps,
+            width: img.naturalWidth,
+            height: img.naturalHeight,
+          };
+          setImageData((prevImageData) =>
+            prevImageData.map((prevImgProps) => (prevImgProps.src === imgProps.src ? updatedImgProps : prevImgProps))
+          );
         };
+
+        return imgProps;
       });
+      setImageData(updatedImageData);
     }
   }, [data]);
 
@@ -50,7 +62,7 @@ export const Portfolio: FC = () => {
       </div>
 
       <div className="flex flex-wrap justify-between items-center ">
-        {data?.map((imgProps: ImageData) => (
+        {imageData.map((imgProps: ImageData) => (
           <div key={imgProps.src} className="mb-[24px]">
             <NextImage alt="" className="object-cover w-full h-[320px]" {...imgProps} />
           </div>

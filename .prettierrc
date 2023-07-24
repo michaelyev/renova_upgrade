@@ -6,5 +6,8 @@
   "printWidth": 120,
   "bracketSpacing": true,
   "bracketSameLine": false,
-  "endOfLine": "auto"
+  "endOfLine": "auto",
+  "importOrder": ["react | <THIRD_PARTY_MODULES>", "^@/(.*)$", "^(.*\\.(scss|css))$"],
+  "importOrderSortSpecifiers": true,
+  "importOrderSeparation": true
 }

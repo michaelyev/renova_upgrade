@@ -1,6 +1,7 @@
-import React from 'react';
+import { type ReactElement } from 'react';
+import { type SubmitHandler, useForm } from 'react-hook-form';
+
 import { contactFormValidation } from '@/constants/contactFormValidation';
-import { SubmitHandler, useForm } from 'react-hook-form';
 
 type Inputs = {
   name: string;
@@ -9,16 +10,17 @@ type Inputs = {
   location: string;
 };
 
-export const ContactFormVertical = () => {
+export const ContactFormVertical = (): ReactElement => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = () => {
+    // console.log(data);
   };
+
   return (
     <div>
       <form

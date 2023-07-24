@@ -1,6 +1,10 @@
-import { IButtonType } from '@/interfaces/buttonType';
+import type { IButtonTypeData } from '@/interfaces/buttonType';
 
-export const buttonConfig: any = {
+interface ButtonConfigObject {
+  [key: string]: IButtonTypeData;
+}
+
+export const buttonConfig: ButtonConfigObject = {
   browse: {
     text: 'Browse catalog',
     icon: true,

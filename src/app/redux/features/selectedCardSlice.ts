@@ -1,6 +1,7 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
+
 import { selectedCardLocalStorage } from '@/helpers/selectedCardLocalStorage';
-import { ISelectedCard } from '@/interfaces/selectedCard';
+import type { ISelectedCard } from '@/interfaces/selectedCard';
 
 type SelectedCardState = {
   selectedCards: ISelectedCard[];

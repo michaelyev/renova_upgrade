@@ -1,4 +1,4 @@
-import { INavTabsConfig } from '@/interfaces/navTabs';
+import type { INavTabsConfig } from '@/interfaces/navTabs';
 
 export const navTabsConfig: INavTabsConfig = {
   products: [

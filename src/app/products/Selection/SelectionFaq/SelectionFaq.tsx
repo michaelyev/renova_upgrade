@@ -1,5 +1,6 @@
 'use client';
-import { useState } from 'react';
+
+import { type ReactElement, useState } from 'react';
 
 const faq = [
   {
@@ -16,7 +17,7 @@ const faq = [
   },
 ];
 
-export default function SelectionFaq() {
+export default function SelectionFaq(): ReactElement {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
@@ -25,16 +26,16 @@ export default function SelectionFaq() {
         <h3 className="">FAQ</h3>
 
         <div>
-          {faq.map((ele, i) => {
-            return (
+          {faq.map(
+            (ele, i): ReactElement => (
               <div key={i} className="max-w-[415px] my-[29px]  ">
-                <button className="text-left" onClick={() => setOpenIndex(openIndex === i ? null : i)}>
+                <button className="text-left" onClick={(): void => setOpenIndex(openIndex === i ? null : i)}>
                   {ele.question}{' '}
                 </button>
                 {openIndex === i && <div className="py-[24px] text-left">{ele.answer}</div>}
               </div>
-            );
-          })}
+            )
+          )}
         </div>
       </div>
     </section>

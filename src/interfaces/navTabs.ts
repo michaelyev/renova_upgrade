@@ -1,5 +1,3 @@
-import { BrandLogos } from './manufacturers';
-
 export interface INavTab {
   id: string;
   text: string;

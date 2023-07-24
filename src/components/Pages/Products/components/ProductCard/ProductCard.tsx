@@ -1,11 +1,11 @@
 'use client';
-import React, { FC } from 'react';
-import Image from 'next/image';
+
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { SelectedIcon } from '@/components/SelectedIcon/SelectedIcon';
-import { IProduct } from '@/interfaces/productsType';
-import { ISelectedCard } from '@/interfaces/selectedCard';
+import type { IProduct } from '@/interfaces/productsType';
+import type { ISelectedCard } from '@/interfaces/selectedCard';
 
 interface IProductCard extends IProduct {
   selectedCards: ISelectedCard[];
@@ -16,27 +16,15 @@ const ProductCard: FC<IProductCard> = (props) => {
     return <>Loading...</>; // Render a loading state or placeholder
   }
 
-  const {
-    id,
-    productName,
-    title,
-    productCode,
-    image,
-    status,
-    description,
-    rating,
-    price,
-    discountedPrice,
-    characteristics,
-    selectedCards,
-  } = props;
+  const { id, productName, title, image, price, discountedPrice, selectedCards } = props;
 
   return (
     <li>
       <div>
         <div className=" h-[280px] w-[280px]  ">
-{/*           <Image alt="" src={props.image} width={280} height={280} />
- */}          <div className=" flex justify-center text-main1 text-5xl bg-accent h-[80px] w-[203px] items-center">
+          {/*           <Image alt="" src={props.image} width={280} height={280} />
+           */}{' '}
+          <div className=" flex justify-center text-main1 text-5xl bg-accent h-[80px] w-[203px] items-center">
             {/* {selected ? ( */}
             <strong>-20 %</strong>
             {/* ) : null} */}

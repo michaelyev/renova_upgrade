@@ -1,16 +1,19 @@
-'use client';
-import React from 'react';
-import { Input } from '../common';
-import { inputConfig } from '@/constants/inputConfig';
-import { NavTabsRedux } from '../common/navtabs/NavTabsRedux';
+import type { ReactElement } from 'react';
 
-const ProductSearch = () => {
+import { Input } from '@/components/common';
+import { NavTabsRedux } from '@/components/common/navtabs/NavTabsRedux';
+
+const ProductSearch = (): ReactElement => {
+  // Define the style string using template literals
+  const style = `padding-top: 4px; padding-left: 16px; margin-bottom: 28px; border: none;`;
+
   return (
     <div>
       <div className="mt-[24px] mb-[16px] justify-center">
         <Input id="productSearch" placeholder="Search" />
       </div>
-      <NavTabsRedux border="border-none" style="py-[4px] px-[16px] mb-[28px] border-none" tabName={'productSort'} />
+      {/* Use the style variable to pass the styles */}
+      <NavTabsRedux border="border-none" style={style} tabName="productSort" />
     </div>
   );
 };

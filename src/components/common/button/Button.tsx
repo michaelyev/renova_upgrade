@@ -1,7 +1,8 @@
-import React, { FC, ReactElement } from 'react';
 import Image from 'next/image';
+import type { FC, ReactElement } from 'react';
+
 import { buttonConfig } from '@/constants/buttonConfig';
-import { IButtonType } from '@/interfaces/buttonType';
+import type { IButtonType } from '@/interfaces/buttonType';
 
 export const Button: FC<IButtonType> = ({ type, imageName }): ReactElement => {
   const btn = buttonConfig[type];

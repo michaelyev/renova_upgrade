@@ -1,9 +1,10 @@
-import { useSelector, useDispatch } from 'react-redux';
+import type { FC, ReactElement } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { setActiveTabCategory, setActiveTabSort } from '@/app/redux/features/navTabsSlice';
+import type { RootState } from '@/app/redux/store/store';
 import { navTabsConfig } from '@/constants/navTabsConfig';
-import { FC, ReactElement } from 'react';
-import { RootState } from '@/app/redux/store/store';
-import { NavTabRedux } from '@/interfaces/navTabRedux';
+import type { NavTabRedux } from '@/interfaces/navTabRedux';
 
 const NavTabsRedux: FC<NavTabRedux> = ({ tabName, style, border }): ReactElement => {
   const tabs = navTabsConfig[tabName];
@@ -16,28 +17,27 @@ const NavTabsRedux: FC<NavTabRedux> = ({ tabName, style, border }): ReactElement
     if (tabName === 'productSort') {
       dispatch(setActiveTabSort(id));
     }
+
     if (tabName === 'products') {
       dispatch(setActiveTabCategory(id));
     }
   };
 
   return (
-    <div className={`flex gap-5 ${border ? border : 'border-b-2 border-solid border-additional2'}   container`}>
-      {tabs.map((tab) => {
-        return (
-          <div
-            key={tab.text}
-            onClick={() => handleClick(tab.id)}
-            className={`${style ? style : 'py-[16px] px-[24px]'}  ${
-              (tabName === 'productSort' ? activeTabSort : activeTabCategory) === tab.id
-                ? 'bg-additional2 text-main1'
-                : 'bg-main1 text-additional2'
-            } `}
-          >
-            {tab.text}
-          </div>
-        );
-      })}
+    <div className={`flex gap-5 ${border || 'border-b-2 border-solid border-additional2'}   container`}>
+      {tabs.map((tab) => (
+        <button
+          key={tab.text}
+          onClick={() => handleClick(tab.id)}
+          className={`${style || 'py-[16px] px-[24px]'}  ${
+            (tabName === 'productSort' ? activeTabSort : activeTabCategory) === tab.id
+              ? 'bg-additional2 text-main1'
+              : 'bg-main1 text-additional2'
+          } `}
+        >
+          {tab.text}
+        </button>
+      ))}
     </div>
   );
 };

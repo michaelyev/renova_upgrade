@@ -1,8 +1,7 @@
-'use client';
-import React, { FC, ReactElement } from 'react';
-import DoneIcon from '@mui/icons-material/Done';
+import type { FC, ReactElement } from 'react';
+
 import { inputConfig } from '@/constants/inputConfig';
-import { IInputType } from '@/interfaces/inputConfig';
+import type { IInputType } from '@/interfaces/inputConfig';
 
 interface IInput {
   id: keyof IInputType;
@@ -11,12 +10,13 @@ interface IInput {
   type?: string;
 }
 
-export const Input: FC<IInput> = ({ id, placeholder, label, type }): ReactElement => {
+export const Input: FC<IInput> = ({ id, placeholder, label }): ReactElement => {
   const input = inputConfig[id];
+
   return (
-    <label className="relative">
+    <label className="relative" htmlFor={id}>
       {label}
-      <input className={input?.styles} type={input?.type} placeholder={placeholder} />
+      <input id={id} className={input?.styles} type={input?.type} placeholder={placeholder} />
       {input?.button}
     </label>
   );

@@ -11,20 +11,18 @@ import { Reviews } from '@/components/Reviews/Reviews';
 import { Video } from '@/components/VideoMain/VideoMain';
 import { ProductsCard } from '@/components/common/cards/products/products';
 
-export const MainPage = () => {
-  return (
-    <main>
-      <Hero />
-      <Products />
-      <Discounts />
-      <Video />
-      <Manufacturers />
-      <Portfolio />
-      <Reviews card={<ProductsCard />} />
-      <Ratings />
-      <Blog />
-      <Faq />
-      <ContactsMain />
-    </main>
-  );
-};
+export const MainPage = () => (
+  <main>
+    <Hero />
+    <Products />
+    <Discounts />
+    <Video />
+    <Manufacturers />
+    <Portfolio />
+    <Reviews card={<ProductsCard />} />
+    <Ratings />
+    <Blog />
+    <Faq />
+    <ContactsMain />
+  </main>
+);

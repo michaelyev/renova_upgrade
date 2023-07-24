@@ -1,30 +1,25 @@
 'use client';
-import React, { FC, ReactElement } from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
 
+import type { FC, ReactElement } from 'react';
+import { FreeMode, Pagination } from 'swiper';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
-
-import { FreeMode, Pagination } from 'swiper';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 type CardType = {
   card: ReactElement;
 };
 
-export const Reviews: FC<CardType> = ({ card }): ReactElement => {
-  return (
-    <>
-      <Swiper slidesPerView={3} spaceBetween={30} freeMode={true} modules={[FreeMode, Pagination]} className="mySwiper">
-        <SwiperSlide>{card}</SwiperSlide>
-        <SwiperSlide>{card}</SwiperSlide>
-        <SwiperSlide>{card}</SwiperSlide>
-        <SwiperSlide>{card}</SwiperSlide>
-        <SwiperSlide>{card}</SwiperSlide>
-        <SwiperSlide>{card}</SwiperSlide>
-      </Swiper>
-    </>
-  );
-};
+export const Reviews: FC<CardType> = ({ card }): ReactElement => (
+  <Swiper slidesPerView={3} spaceBetween={30} freeMode modules={[FreeMode, Pagination]} className="mySwiper">
+    <SwiperSlide>{card}</SwiperSlide>
+    <SwiperSlide>{card}</SwiperSlide>
+    <SwiperSlide>{card}</SwiperSlide>
+    <SwiperSlide>{card}</SwiperSlide>
+    <SwiperSlide>{card}</SwiperSlide>
+    <SwiperSlide>{card}</SwiperSlide>
+  </Swiper>
+);

@@ -1,4 +1,4 @@
-import { IControlPageScroll } from '@/interfaces/pageScroll';
+import type { IControlPageScroll } from '@/interfaces/pageScroll';
 
 export const controllPageScroll = ({ setBackground, verticalOffset }: IControlPageScroll): void => {
   if (typeof window !== 'undefined') {

@@ -1,17 +1,21 @@
 'use client';
-import { RootState } from '@/app/redux/store/store';
+
+import { type FC, type ReactElement, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+
+import type { RootState } from '@/app/redux/store/store';
 import { ProductPageCard } from '@/components/ProductPageCard/ProductPageCard';
 import { getData } from '@/helpers/getData';
-import { IProduct } from '@/interfaces/productsType';
-import React, { useState, useEffect, FC } from 'react';
-import { useSelector } from 'react-redux';
+import type { IProduct } from '@/interfaces/productsType';
+import { ISelectedCard } from '@/interfaces/selectedCard';
 
 interface ProductProps {
   id: string;
 }
-export const Product: FC<ProductProps> = ({ id }) => {
+
+export const Product: FC<ProductProps> = ({ id }): ReactElement => {
   const [productData, setProductData] = useState<IProduct[]>([]);
-  const selectedCards = useSelector((state: RootState) => state.selectedCards.selectedCards);
+  const selectedCards = useSelector((state: RootState): ISelectedCard[] => state.selectedCards.selectedCards);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,10 +28,5 @@ export const Product: FC<ProductProps> = ({ id }) => {
 
   const filteredProduct = productData.find((product) => product?.id === +id);
 
-  return (
-    <>
-      <ProductPageCard props={filteredProduct} selectedCards={selectedCards} />
-    </>
-  );
+  return <ProductPageCard props={filteredProduct} selectedCards={selectedCards} />;
 };
-
