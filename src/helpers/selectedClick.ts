@@ -1,7 +1,7 @@
-import { Dispatch } from 'redux';
+import type { Dispatch } from 'redux';
 
-import { setSelectedCards } from '@/app/redux/features/selectedCardSlice';
 import type { ISelectedCard } from '@/interfaces/selectedCard';
+import { setSelectedCards } from '@/store/features/selectedCardSlice';
 
 export const handleSelectionClick = (
   id: number,

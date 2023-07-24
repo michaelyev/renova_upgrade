@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { fetchData } from '@/app/redux/features/asyncActions/fetchProductData';
-import type { RootState } from '@/app/redux/store/store';
 import type { IProduct } from '@/interfaces/productsType';
+import { fetchData } from '@/store/features/asyncActions/fetchProductData';
+import type { RootState } from '@/store/store/store';
 
 const initialState = {
   products: [] as IProduct[],

@@ -9,7 +9,6 @@ import { Products } from '@/components/ProductsMain/ProductsMain';
 import { Ratings } from '@/components/Ratings/Ratings';
 import { Reviews } from '@/components/Reviews/Reviews';
 import { Video } from '@/components/VideoMain/VideoMain';
-import { ProductsCard } from '@/components/common/cards/products/products';
 
 export const MainPage = () => (
   <main>
@@ -19,7 +18,7 @@ export const MainPage = () => (
     <Video />
     <Manufacturers />
     <Portfolio />
-    <Reviews card={<ProductsCard />} />
+    <Reviews />
     <Ratings />
     <Blog />
     <Faq />

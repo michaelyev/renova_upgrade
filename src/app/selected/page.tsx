@@ -1,18 +1,17 @@
 'use client';
 
 import Image from 'next/image';
-import type { FC, ReactElement } from 'react';
 import { useSelector } from 'react-redux';
 
-import { useAppDispatch } from '@/app/redux/hooks';
-import type { RootState } from '@/app/redux/store/store';
 import { Button } from '@/components';
 import { ContactFormVertical } from '@/components/ContactFormVertical/ContactFormVertical';
 import { Reviews } from '@/components/Reviews/Reviews';
 import { handleSelectionClick } from '@/helpers/selectedClick';
 import type { ISelectedCard } from '@/interfaces/selectedCard';
+import { useAppDispatch } from '@/store/hooks';
+import type { RootState } from '@/store/store/store';
 
-const Selected: FC = (): ReactElement => {
+export default function Selected() {
   const selectedCards = useSelector((state: RootState): ISelectedCard[] => state.selectedCards.selectedCards);
   const dispatch = useAppDispatch();
 
@@ -93,10 +92,8 @@ const Selected: FC = (): ReactElement => {
       <p className="h3 mb-[40px]">You may also like</p>
 
       <div className="mb-[128px]">
-        <Reviews card={<div className="h-[240px] w-[427px] bg-gray-500" />} />
+        <Reviews />
       </div>
     </section>
   );
-};
-
-export default Selected;
+}

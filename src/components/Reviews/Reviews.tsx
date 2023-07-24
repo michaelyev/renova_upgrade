@@ -9,17 +9,14 @@ import 'swiper/css/pagination';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-type CardType = {
-  card: ReactElement;
-};
+import { ProductsCard } from '@/components/common/cards/products/products';
 
-export const Reviews: FC<CardType> = ({ card }): ReactElement => (
+export const Reviews: FC = (): ReactElement => (
   <Swiper slidesPerView={3} spaceBetween={30} freeMode modules={[FreeMode, Pagination]} className="mySwiper">
-    <SwiperSlide>{card}</SwiperSlide>
-    <SwiperSlide>{card}</SwiperSlide>
-    <SwiperSlide>{card}</SwiperSlide>
-    <SwiperSlide>{card}</SwiperSlide>
-    <SwiperSlide>{card}</SwiperSlide>
-    <SwiperSlide>{card}</SwiperSlide>
+    {Array.from(Array(6).keys()).map(() => (
+      <SwiperSlide>
+        <ProductsCard />
+      </SwiperSlide>
+    ))}
   </Swiper>
 );

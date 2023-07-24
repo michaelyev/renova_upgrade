@@ -1,10 +1,9 @@
 import Image from 'next/image';
-import type { FC } from 'react';
-import React from 'react';
+import React, { type FC } from 'react';
 
-import { useAppDispatch } from '@/app/redux/hooks';
 import { handleSelectionClick } from '@/helpers/selectedClick';
 import type { ISelectedCard } from '@/interfaces/selectedCard';
+import { useAppDispatch } from '@/store/hooks';
 
 interface ISelectedIconProps {
   id: number;

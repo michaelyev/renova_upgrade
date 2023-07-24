@@ -7,7 +7,6 @@ interface IInput {
   id: keyof IInputType;
   placeholder?: string;
   label?: string;
-  type?: string;
 }
 
 export const Input: FC<IInput> = ({ id, placeholder, label }): ReactElement => {

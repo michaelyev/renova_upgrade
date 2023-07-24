@@ -1,19 +1,19 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { fetchBlogData } from '@/app/redux/features/asyncActions/fetchBlogData';
-import type { RootState } from '@/app/redux/store/store';
 import type { BlogItem } from '@/interfaces/blogItem';
+import { fetchBlogData } from '@/store/features/asyncActions/fetchBlogData';
+import type { RootState } from '@/store/store/store';
 
 type BlogState = {
   blog: BlogItem[];
   error: string;
-  loading: boolean;
+  isLoading: boolean;
 };
 
 const initialState: BlogState = {
   blog: [],
   error: '',
-  loading: false,
+  isLoading: false,
 };
 
 const blogDataSlice = createSlice({
@@ -24,10 +24,10 @@ const blogDataSlice = createSlice({
     builder
       .addCase(fetchBlogData.fulfilled, (state, action: PayloadAction<BlogItem[]>) => {
         state.blog = action.payload;
-        state.loading = false;
+        state.isLoading = false;
       })
       .addCase(fetchBlogData.pending, (state) => {
-        state.loading = true;
+        state.isLoading = true;
       })
       .addCase(fetchBlogData.rejected, (state, action) => {
         if (typeof action.payload === 'string') {
@@ -35,7 +35,7 @@ const blogDataSlice = createSlice({
         } else {
           state.error = 'An error occurred';
         }
-        state.loading = false;
+        state.isLoading = false;
       });
   },
 });

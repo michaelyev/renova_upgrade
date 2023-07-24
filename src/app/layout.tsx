@@ -1,9 +1,9 @@
 import { Inter } from 'next/font/google';
 import type { PropsWithChildren, ReactElement } from 'react';
 
-import { Providers } from '@/app/redux/provider';
 import { Footer } from '@/components/Footer/Footer';
 import { Header } from '@/components/Header/Header';
+import { Providers } from '@/store/provider';
 
 import './globals.css';
 

@@ -6,7 +6,6 @@ export const Video: FC = (): ReactElement => (
     <div className="container">
       <h2 className="font-darkGrotesque font-bold text-4xl leading-tight mb-[40px]">Why Us?</h2>
     </div>
-
     <div className="bg-main1">
       <div className="container">
         <div className="mx-auto flex justify-between items-center gap-6">

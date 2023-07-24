@@ -3,17 +3,17 @@
 import React, { type ReactElement, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-import Selection from '@/app/products/Selection/Selection';
-import SelectionFaq from '@/app/products/Selection/SelectionFaq/SelectionFaq';
-import type { RootState } from '@/app/redux/store/store';
+import SelectionFaq from '@/app/products/Selection/SelectionFaq/page';
+import Selection from '@/app/products/Selection/page';
 import { ContactForm } from '@/components';
 import Banner from '@/components/Pages/Products/components/Banner/Banner';
 import ProductList from '@/components/Pages/Products/components/ProductList/ProductList';
 import ProductSearch from '@/components/ProductSearch/ProductSearch';
 import { NavTabsRedux } from '@/components/common/navtabs/NavTabsRedux';
 import { useActions } from '@/hooks/useActions';
+import type { RootState } from '@/store/store/store';
 
-const Products = (): ReactElement => {
+export default function Products(): ReactElement {
   const activeTab = useSelector((state: RootState): string => state.navtabcategory.activeTab);
 
   const { fetchData } = useActions();
@@ -39,6 +39,4 @@ const Products = (): ReactElement => {
       <ContactForm />
     </main>
   );
-};
-
-export default Products;
+}

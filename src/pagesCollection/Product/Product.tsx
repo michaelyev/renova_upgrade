@@ -3,11 +3,11 @@
 import { type FC, type ReactElement, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import type { RootState } from '@/app/redux/store/store';
 import { ProductPageCard } from '@/components/ProductPageCard/ProductPageCard';
 import { getData } from '@/helpers/getData';
 import type { IProduct } from '@/interfaces/productsType';
-import { ISelectedCard } from '@/interfaces/selectedCard';
+import type { ISelectedCard } from '@/interfaces/selectedCard';
+import type { RootState } from '@/store/store/store';
 
 interface ProductProps {
   id: string;

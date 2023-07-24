@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 
 import { BlogArticlePage } from '@/pagesCollection/BlogArticle';
 
-const page = async ({ params }: { params: { blogId: string } }): Promise<React.ReactElement> => (
-  <BlogArticlePage blogId={parseInt(params.blogId, 10)} />
-);
-
-export default page;
+export default function Page({ params }: { params: { blogId: string } }): ReactElement {
+  return <BlogArticlePage blogId={parseInt(params.blogId, 10)} />;
+}

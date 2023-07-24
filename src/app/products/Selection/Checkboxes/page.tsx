@@ -1,12 +1,66 @@
+'use client';
+
 import type { ReactElement } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { ArrowDown, checkboxesConfigCountertops } from '@/app/products/Selection/Checkboxes/checkboxesConfig';
-import { toggleIndex } from '@/app/redux/features/checkBoxSlice';
-import type { RootState } from '@/app/redux/store/store';
 import { StyledCheckbox } from '@/components/common/styledCheckbox/StyledCheckbox';
+import { toggleIndex } from '@/store/features/checkBoxSlice';
+import type { RootState } from '@/store/store/store';
 
-const Checkboxes = (): ReactElement => {
+interface ArrowDownProps {
+  onClick(): void;
+}
+
+const ArrowDown = ({ onClick }: ArrowDownProps): ReactElement => (
+  <svg onClick={onClick} width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10.59 0.294922L6 4.87492L1.41 0.294922L0 1.70492L6 7.70492L12 1.70492L10.59 0.294922Z" fill="#B28A87" />
+  </svg>
+);
+
+const checkboxesConfigCountertops = [
+  {
+    title: 'Manufacturers',
+    isChecked: true,
+    checkboxes: [
+      {
+        label: 'Ashland',
+        isChecked: true,
+      },
+      {
+        label: 'Benton',
+      },
+      {
+        label: 'Boulder',
+      },
+    ],
+  },
+  {
+    title: 'Types',
+    isChecked: true,
+    checkboxes: [
+      {
+        label: 'Countertop',
+        isChecked: true,
+      },
+      {
+        label: 'Wall',
+      },
+    ],
+  },
+  {
+    title: 'Finish',
+    checkboxes: [
+      {
+        label: 'Antique',
+      },
+      {
+        label: 'Antique2',
+      },
+    ],
+  },
+];
+
+export default function Checkboxes(): ReactElement {
   const expandedIndexes = useSelector((state: RootState): number[] => state.checkbox.expandedIndexes);
   const dispatch = useDispatch();
 
@@ -47,6 +101,4 @@ const Checkboxes = (): ReactElement => {
       )}
     </>
   );
-};
-
-export default Checkboxes;
+}

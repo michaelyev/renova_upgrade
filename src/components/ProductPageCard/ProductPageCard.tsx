@@ -121,7 +121,7 @@ export const ProductPageCard: FC<IProductPageCard> = ({ props, selectedCards }) 
           <Button id="feedback" type="feedback" />
         </div>
 
-        <Reviews card={<div className="h-[240px] w-[427px] bg-gray-500" />} />
+        <Reviews />
       </section>
     </div>
   );

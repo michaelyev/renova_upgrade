@@ -2,9 +2,9 @@
 
 import { useSelector } from 'react-redux';
 
-import { productData } from '@/app/redux/features/productDataSlice';
-import type { RootState } from '@/app/redux/store/store';
 import ProductCard from '@/components/Pages/Products/components/ProductCard/ProductCard';
+import { productData } from '@/store/features/productDataSlice';
+import type { RootState } from '@/store/store/store';
 
 const ProductList = () => {
   const selectedCards = useSelector((state: RootState) => state.selectedCards.selectedCards);

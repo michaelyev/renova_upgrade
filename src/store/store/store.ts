@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import blogDataReducer from '@/app/redux/features/blogDataSlice';
-import checkBoxReducer from '@/app/redux/features/checkBoxSlice';
-import { navTabCategoryReducer, navTabSortReducer } from '@/app/redux/features/navTabsSlice';
-import productDataReducer from '@/app/redux/features/productDataSlice';
-import selectedCardReducer from '@/app/redux/features/selectedCardSlice';
+import blogDataReducer from '@/store/features/blogDataSlice';
+import checkBoxReducer from '@/store/features/checkBoxSlice';
+import { navTabCategoryReducer, navTabSortReducer } from '@/store/features/navTabsSlice';
+import productDataReducer from '@/store/features/productDataSlice';
+import selectedCardReducer from '@/store/features/selectedCardSlice';
 
 export const store = configureStore({
   reducer: {

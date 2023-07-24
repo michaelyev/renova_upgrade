@@ -4,9 +4,9 @@ import { useSelector } from 'react-redux';
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import type { RootState } from '@/app/redux/store/store';
 import { DiscountsCard } from '@/components/Discounts/DiscountsCards';
 import type { IProduct } from '@/interfaces/productsType';
+import type { RootState } from '@/store/store/store';
 
 SwiperCore.use([Navigation]);
 

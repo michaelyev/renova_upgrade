@@ -1,12 +1,13 @@
 'use client';
+
 import { type FC, type ReactElement, useState } from 'react';
 
-import { CheckIcon } from './CheckIcon';
+import { CheckIcon } from '@/components';
 
 export const StyledCheckbox: FC = (): ReactElement => {
-  const [isChecked, setIsChecked] = useState(true);
+  const [isChecked, setIsChecked] = useState<boolean>(true);
 
-  const handleCheckboxChange = () => {
+  const handleCheckboxChange = (): void => {
     setIsChecked(!isChecked);
   };
 
