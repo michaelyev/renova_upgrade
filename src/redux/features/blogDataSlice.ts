@@ -1,8 +1,8 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import type { BlogItem } from '@/interfaces/blogItem';
-import { fetchBlogData } from '@/store/features/asyncActions/fetchBlogData';
-import type { RootState } from '@/store/store/store';
+import { fetchBlogData } from '@/redux/features/asyncActions/fetchBlogData';
+import type { RootState } from '@/redux/store/store';
 
 type BlogState = {
   blog: BlogItem[];

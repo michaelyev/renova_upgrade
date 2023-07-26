@@ -4,8 +4,8 @@ import type { ReactElement } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { StyledCheckbox } from '@/components/common/styledCheckbox/StyledCheckbox';
-import { toggleIndex } from '@/store/features/checkBoxSlice';
-import type { RootState } from '@/store/store/store';
+import { toggleIndex } from '@/redux/features/checkBoxSlice';
+import type { RootState } from '@/redux/store/store';
 
 interface ArrowDownProps {
   onClick(): void;

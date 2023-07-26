@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { navTabsConfig } from '@/constants/navTabsConfig';
 import type { NavTabRedux } from '@/interfaces/navTabRedux';
-import { setActiveTabCategory, setActiveTabSort } from '@/store/features/navTabsSlice';
-import type { RootState } from '@/store/store/store';
+import { setActiveTabCategory, setActiveTabSort } from '@/redux/features/navTabsSlice';
+import type { RootState } from '@/redux/store/store';
 
 const NavTabsRedux: FC<NavTabRedux> = ({ tabName, style, border }): ReactElement => {
   const tabs = navTabsConfig[tabName];

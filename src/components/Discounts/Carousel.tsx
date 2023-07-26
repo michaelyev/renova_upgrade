@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { DiscountsCard } from '@/components/Discounts/DiscountsCards';
 import type { IProduct } from '@/interfaces/productsType';
-import type { RootState } from '@/store/store/store';
+import type { RootState } from '@/redux/store/store';
 
 SwiperCore.use([Navigation]);
 

@@ -9,7 +9,7 @@ export const Blog: FC = (): ReactElement => {
   const { fetchBlogData } = useActions();
 
   useEffect((): void => {
-    fetchBlogData('blogData');
+    fetchBlogData();
   }, [fetchBlogData]);
 
   return (

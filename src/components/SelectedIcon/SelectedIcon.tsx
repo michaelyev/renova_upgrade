@@ -3,7 +3,7 @@ import React, { type FC } from 'react';
 
 import { handleSelectionClick } from '@/helpers/selectedClick';
 import type { ISelectedCard } from '@/interfaces/selectedCard';
-import { useAppDispatch } from '@/store/hooks';
+import { useAppDispatch } from '@/redux/hooks';
 
 interface ISelectedIconProps {
   id: number;

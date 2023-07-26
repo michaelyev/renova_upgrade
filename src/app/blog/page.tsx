@@ -1,21 +1,23 @@
 'use client';
 
-import type { ReactElement } from 'react';
+import { type ReactElement, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { ContactForm, Input } from '@/components';
 import { BlogCard } from '@/components/BlogCard/BlogCard';
 import { useActions } from '@/hooks/useActions';
 import { type BlogItem } from '@/interfaces/blogItem';
-import { blogData } from '@/store/features/blogDataSlice';
+import { blogData } from '@/redux/features/blogDataSlice';
 
 export default function Blog(): ReactElement {
   const { blog } = useSelector(blogData);
   const { fetchBlogData } = useActions();
 
-  if (!blog.length) {
-    fetchBlogData('blogData');
-  }
+  useEffect(() => {
+    fetchBlogData();
+  }, [fetchBlogData]);
+
+  console.log('page' + blog); // eslint-disable-line
 
   return (
     <section className="pt-[154px]">

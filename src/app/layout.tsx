@@ -3,7 +3,7 @@ import type { PropsWithChildren, ReactElement } from 'react';
 
 import { Footer } from '@/components/Footer/Footer';
 import { Header } from '@/components/Header/Header';
-import { Providers } from '@/store/provider';
+import { Providers } from '@/redux/provider';
 
 import './globals.css';
 

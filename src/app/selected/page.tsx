@@ -8,8 +8,8 @@ import { ContactFormVertical } from '@/components/ContactFormVertical/ContactFor
 import { Reviews } from '@/components/Reviews/Reviews';
 import { handleSelectionClick } from '@/helpers/selectedClick';
 import type { ISelectedCard } from '@/interfaces/selectedCard';
-import { useAppDispatch } from '@/store/hooks';
-import type { RootState } from '@/store/store/store';
+import { useAppDispatch } from '@/redux/hooks';
+import type { RootState } from '@/redux/store/store';
 
 export default function Selected() {
   const selectedCards = useSelector((state: RootState): ISelectedCard[] => state.selectedCards.selectedCards);

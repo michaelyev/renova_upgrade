@@ -6,7 +6,7 @@ import type { IProduct } from '@/interfaces/productsType';
 export const fetchData = createAsyncThunk<IProduct[], string>(
   'productData/fetchData',
   async (activeTab: string): Promise<IProduct[]> => {
-    const productData = await getData(`http://localhost:5000/${activeTab}`);
+    const productData = await getData(`http://localhost:5000/products/${activeTab}`);
 
     return productData;
   }

@@ -1,9 +1,9 @@
 import { bindActionCreators } from '@reduxjs/toolkit';
 import { useMemo } from 'react';
 
-import * as fetchBlogData from '@/store/features/asyncActions/fetchBlogData';
-import * as fetchProductData from '@/store/features/asyncActions/fetchProductData';
-import { useAppDispatch } from '@/store/hooks';
+import * as fetchBlogData from '@/redux/features/asyncActions/fetchBlogData';
+import * as fetchProductData from '@/redux/features/asyncActions/fetchProductData';
+import { useAppDispatch } from '@/redux/hooks';
 
 type actionsType = typeof fetchBlogData & typeof fetchProductData;
 

@@ -4,6 +4,7 @@
     "date": "Sat, 10 Jun 2023",
     "readingTime": "5 min. for reading",
     "title": "Which stone is right for your kitchen?",
+    "image": "",
     "body": "<div className='max-w-md mx-auto bg-black rounded-xl shadow-md overflow-hidden md:max-w-2xl m-4'><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <img src='http://placekitten.com/200/300' className='my-4'/></p></div>"
   },
   {

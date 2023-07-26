@@ -7,7 +7,7 @@ import { ProductPageCard } from '@/components/ProductPageCard/ProductPageCard';
 import { getData } from '@/helpers/getData';
 import type { IProduct } from '@/interfaces/productsType';
 import type { ISelectedCard } from '@/interfaces/selectedCard';
-import type { RootState } from '@/store/store/store';
+import type { RootState } from '@/redux/store/store';
 
 interface ProductProps {
   id: string;

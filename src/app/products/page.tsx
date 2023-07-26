@@ -11,7 +11,7 @@ import ProductList from '@/components/Pages/Products/components/ProductList/Prod
 import ProductSearch from '@/components/ProductSearch/ProductSearch';
 import { NavTabsRedux } from '@/components/common/navtabs/NavTabsRedux';
 import { useActions } from '@/hooks/useActions';
-import type { RootState } from '@/store/store/store';
+import type { RootState } from '@/redux/store/store';
 
 export default function Products(): ReactElement {
   const activeTab = useSelector((state: RootState): string => state.navtabcategory.activeTab);
