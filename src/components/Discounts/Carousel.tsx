@@ -38,7 +38,7 @@ export const Carousel: FC<CarouselProps> = ({ discounts }): ReactElement => {
       >
         <div className="">
           {discounts.map((discountCard) => (
-            <SwiperSlide key={discountCard.id}>
+            <SwiperSlide key={discountCard._id}>
               <DiscountsCard discountCard={discountCard} selectedCards={selectedCards} />
             </SwiperSlide>
           ))}

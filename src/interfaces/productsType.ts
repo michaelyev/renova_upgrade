@@ -1,22 +1,21 @@
 export interface IProduct {
-  id: number;
+  url: string;
+  _id: string;
+  manufacturer: string;
+  model: string;
+  size: string;
   productName: string;
   title: string;
   productCode: string;
   image: string;
   status: string;
   description: string;
-  rating: number;
-  price: string | number;
+  rating: string;
+  price: number;
   discountedPrice: number;
-  characteristics: {
-    manufacturer: string;
-    model: string;
-    size: string;
-    purpose: string;
-    surface: string;
-    design: string;
-    material: string;
-    type: string;
-  };
+  purpose: string;
+  surface: string;
+  design: string;
+  material: string;
+  type: string;
 }

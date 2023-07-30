@@ -17,7 +17,24 @@ export const ProductPageCard: FC<IProductPageCard> = ({ props, selectedCards }) 
     return <>Loading...</>; // Render a loading state or placeholder
   }
 
-  const { id, productName, productCode, image, status, description, price, discountedPrice, characteristics } = props;
+  const {
+    _id: id,
+    productName,
+    productCode,
+    image,
+    status,
+    description,
+    price,
+    discountedPrice,
+    manufacturer,
+    model,
+    size,
+    purpose,
+    surface,
+    design,
+    material,
+    type,
+  } = props;
 
   return (
     <div>
@@ -35,35 +52,35 @@ export const ProductPageCard: FC<IProductPageCard> = ({ props, selectedCards }) 
             <ul className="p1">
               <li className="flex justify-between pb-[24px]">
                 <p>Manufacturer</p>
-                <p>{characteristics.manufacturer}</p>
+                <p>{manufacturer}</p>
               </li>
               <li className="flex justify-between pb-[24px]">
                 <p>Model</p>
-                <p>{characteristics.model}</p>
+                <p>{model}</p>
               </li>
               <li className="flex justify-between pb-[24px]">
                 <p>Size</p>
-                <p>{characteristics.size}</p>
+                <p>{size}</p>
               </li>
               <li className="flex justify-between pb-[24px]">
                 <p>Purpose</p>
-                <p>{characteristics.purpose}</p>
+                <p>{purpose}</p>
               </li>
               <li className="flex justify-between pb-[24px]">
                 <p>Surface</p>
-                <p>{characteristics.surface}</p>
+                <p>{surface}</p>
               </li>
               <li className="flex justify-between pb-[24px]">
                 <p>Design</p>
-                <p>{characteristics.design}</p>
+                <p>{design}</p>
               </li>
               <li className="flex justify-between pb-[24px]">
                 <p>Material</p>
-                <p>{characteristics.material}</p>
+                <p>{material}</p>
               </li>
               <li className="flex justify-between pb-[24px]">
                 <p>Type</p>
-                <p>{characteristics.type}</p>
+                <p>{type}</p>
               </li>
             </ul>
           </div>

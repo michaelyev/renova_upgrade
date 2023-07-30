@@ -16,7 +16,7 @@ const ProductCard: FC<IProductCard> = (props) => {
     return <>Loading...</>; // Render a loading state or placeholder
   }
 
-  const { url, productName, title, image, price, discountedPrice, selectedCards } = props;
+  const { _id: id, url, productName, title, image, price, discountedPrice, selectedCards } = props;
 
   return (
     <li>
@@ -32,7 +32,7 @@ const ProductCard: FC<IProductCard> = (props) => {
         </div>
         <div className="h-[99px] w-[280px] bg-main1 px-[24px]">
           <h3 className="font-inter font-normal text-base leading-[1.21] text-left  pt-[8px]">
-            <Link href={`/products/${encodeURIComponent(id)}`}>{title}</Link>
+            <Link href={`/products/${encodeURIComponent(url)}`}>{title}</Link>
           </h3>
 
           <div className="flex justify-between items-center mt-[8px]">

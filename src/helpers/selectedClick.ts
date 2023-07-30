@@ -4,7 +4,7 @@ import type { ISelectedCard } from '@/interfaces/selectedCard';
 import { setSelectedCards } from '@/redux/features/selectedCardSlice';
 
 export const handleSelectionClick = (
-  id: number,
+  id: string,
   selectedCards: ISelectedCard[],
   productName: string,
   image: string,
@@ -12,10 +12,10 @@ export const handleSelectionClick = (
   discountedPrice: string | number,
   dispatch: Dispatch
 ) => {
-  const foundCardId = selectedCards.find((card) => card.id === Number(id));
+  const foundCardId = selectedCards.find((card) => card.id === id);
 
   if (foundCardId) {
-    const newSelectedCards = selectedCards.filter((card) => card.id !== Number(id));
+    const newSelectedCards = selectedCards.filter((card) => card.id !== id);
     dispatch(setSelectedCards(newSelectedCards));
     localStorage.setItem('selectedCard', JSON.stringify(newSelectedCards));
 

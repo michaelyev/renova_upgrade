@@ -10,23 +10,21 @@ import type { ISelectedCard } from '@/interfaces/selectedCard';
 import type { RootState } from '@/redux/store/store';
 
 interface ProductProps {
-  id: string;
+  url: string;
 }
 
-export const Product: FC<ProductProps> = ({ id }): ReactElement => {
-  const [productData, setProductData] = useState<IProduct[]>([]);
+export const Product: FC<ProductProps> = ({ url }): ReactElement => {
+  const [productData, setProductData] = useState<IProduct>();
   const selectedCards = useSelector((state: RootState): ISelectedCard[] => state.selectedCards.selectedCards);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getData('/countertops.json');
-      setProductData(data.filter((product: IProduct) => product?.id === +id));
+      const data = await getData(`http://localhost:5000/products/${url}`);
+      setProductData(data);
     };
 
     fetchData();
-  }, [id]);
+  }, [url]);
 
-  const filteredProduct = productData.find((product) => product?.id === +id);
-
-  return <ProductPageCard props={filteredProduct} selectedCards={selectedCards} />;
+  return <ProductPageCard props={productData} selectedCards={selectedCards} />;
 };

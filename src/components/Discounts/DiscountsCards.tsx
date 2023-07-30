@@ -22,7 +22,7 @@ export const DiscountsCard: FC<IDicsoundCards> = ({ discountCard, selectedCards 
         <h4 className="font-darkGrotesque text-4xl text-main ">{discountCard.price}</h4>
         <h4 className="text-additional2">{discountCard?.discountedPrice}</h4>
         <SelectedIcon
-          id={discountCard.id}
+          id={discountCard._id}
           productName={discountCard.productName}
           image={discountCard.image}
           price={discountCard.price}

@@ -1,5 +1,5 @@
 export interface ISelectedCard {
-  id: number;
+  id: string;
   productName: string;
   image: string;
   price: string;

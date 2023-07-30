@@ -14,7 +14,7 @@ const ProductList = () => {
     <section>
       <ul className="flex flex-wrap justify-between gap-[16px] m-width-[] ">
         {products?.map((product) => (
-          <ProductCard key={product.id} {...product} selectedCards={selectedCards} />
+          <ProductCard key={product._id} {...product} selectedCards={selectedCards} />
         ))}
       </ul>
     </section>

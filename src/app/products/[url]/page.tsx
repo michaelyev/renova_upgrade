@@ -2,10 +2,10 @@ import type { ReactElement } from 'react';
 
 import { Product } from '@/pagesCollection/Product/Product';
 
-export default function ProductPage({ params: { id } }: { params: { id: string } }): ReactElement {
+export default function ProductPage({ params: { url } }: { params: { url: string } }): ReactElement {
   return (
     <section className="container pt-[108px] pb-[64px]">
-      <Product id={id} />
+      <Product url={url} />
 
       <p className="mt-[128px] mb-[40px] h3 ">You may also like</p>
 
