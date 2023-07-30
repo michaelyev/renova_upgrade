@@ -16,7 +16,7 @@ const ProductCard: FC<IProductCard> = (props) => {
     return <>Loading...</>; // Render a loading state or placeholder
   }
 
-  const { id, productName, title, image, price, discountedPrice, selectedCards } = props;
+  const { url, productName, title, image, price, discountedPrice, selectedCards } = props;
 
   return (
     <li>
