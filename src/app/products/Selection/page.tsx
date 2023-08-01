@@ -1,5 +1,3 @@
-'use client';
-
 import type { ReactElement } from 'react';
 
 import Checkboxes from '@/app/products/Selection/Checkboxes/page';

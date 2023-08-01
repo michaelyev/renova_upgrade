@@ -1,3 +1,5 @@
+'use client';
+
 import type { FC, ReactElement } from 'react';
 
 import { inputConfig } from '@/constants/inputConfig';
